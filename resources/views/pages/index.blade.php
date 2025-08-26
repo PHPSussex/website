@@ -4,16 +4,21 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{{ config('app.name', 'PHP Sussex | Home') }}</title>
-
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
+        <title>PHP Sussex</title>
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="antialiased bg-gray-900 text-gray-100 h-full">
-        <div class="container mx-auto px-4 py-8">
-            <h1 class="text-2xl">PHP Sussex</h1>
-        </div>
+    <body class="antialiased bg-[#000] text-gray-100 h-full">
+        <header class="px-6 py-3 flex justify-between items-center">
+            <x-logo class="w-[4.25rem]" />
+            <x-socials />
+        </header>
+        <main>
+            <img class="object-cover w-full" src="{{ Vite::asset('resources/images/meetup.jpg') }}" alt="Attendees at the PHP Sussex meetup" />
+            <div class="container mx-auto px-6 py-4 max-w-3xl">
+                <h1 class="text-4xl font-bold">PHP Sussex</h1>
+                <p>PHP Sussex is a free, open to all, meetup based in Brighton, UK.</p>
+            </div>
+        </main>
     </body>
 </html>
