@@ -48,7 +48,32 @@
                     <div class="text-4xl font-extrabold uppercase mb-4">
                         <p class="inline">PHP Sussex is a free, open to all, meetup based in Brighton, UK.</p>
                     </div>
-                    <p class="text-mono-400">We're a community of developers who love working with the web and getting sh<span class="text-primary-400">*</span>t done with PHP (and JavaScript and CSS and Tailwind and TypeScript and NodeJS and React and Vue and Python and&hellip;).</p>
+                    <div class="space-y-3">
+                        <x-type.para class="text-mono-400">We're a community of folks who love working with the web and getting sh<span class="text-primary-400">*</span>t done, which often involves PHP (and JavaScript and CSS and Tailwind and TypeScript and NodeJS and React and Vue and Python and&hellip;).</x-type.para>
+                        <x-type.para>We meet up every couple of months to ...</x-type.para>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-12 divide-x divide-gray-800">
+                <div class="col-span-2"></div>
+                <div class="col-span-8 p-8">
+                    <x-type.primary-upper class="mb-3">Organisers</x-type.primary-upper>
+                    <x-type.para class="mb-10">Need to know where the toilets are or which pizza is veggie, vegan or gluten-free?</x-type.para>
+                    <div class="flex gap-36">
+                        <x-home.organizer
+                            name="Yannick"
+                            :img="Vite::asset('resources/images/yannick.jpg')"
+                            pronounced="Yan-eek"
+                            nationality="Br<span class='text-primary-400'>e</span>ton <span class='text-2xl'>🇫🇷</span>"
+                        />
+                        <x-home.organizer
+                            name="Joby"
+                            :img="Vite::asset('resources/images/joby.jpg')"
+                            pronounced="Joe-bee"
+                            nationality="Br<span class='text-primary-400'>i</span>ton <span class='text-2xl'>🇬🇧</span>"
+                        />
+                    </div>
                 </div>
             </div>
 
@@ -56,13 +81,14 @@
             <div class="grid grid-cols-12 divide-x divide-gray-800">
                 <div class="col-span-2"></div>
                 <div class="col-span-8 p-8">
-                    <h2 class="tracking-wide text-gray-400 text-sm">
+                    <x-type.primary-upper tag="h2" class="mb-3">Sponsors &amp; Support</x-type.primary-upper>
+                    <div aria-hidden="true" class="tracking-wide text-mono-400 text-sm">
                     <pre>
 //
-// We couldn't do this without
+// We couldn't do this without these rad people
 //
                     </pre>
-                    </h2>
+                    </div>
                     <div class="text-mono-700 flex justify-between gap-10">
                         <x-sponsor name="Tillo" provides="Drinks" url="https://tillo.com" />
                         <x-sponsor name="Runway East" provides="Pizza & Venue" url="https://runwayea.st" />
