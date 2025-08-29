@@ -23,6 +23,13 @@ class SettingTest extends TestCase
     // phpcs:ignore
     public function test_modelClass_scope(): void
     {
-        $this->markTestIncomplete('Only selects models with class');
+        $other = new class extends Setting {};
+        $other->save();
+        $setting = new class extends Setting {};
+        $setting->save();
+
+        $this->assertDatabaseCount($setting, 2);
+        $class = $setting::class;
+        $this->assertSame($class, $class::first()->model);
     }
 }

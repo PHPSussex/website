@@ -24,5 +24,9 @@ abstract class Setting extends Model
                 $model->model = static::class;
             }
         });
+
+        static::addGlobalScope('model', function ($builder) {
+            $builder->where('model', static::class);
+        });
     }
 }
