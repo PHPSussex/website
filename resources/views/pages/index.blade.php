@@ -1,7 +1,4 @@
-<?php
-    use function App\setting;
-?>
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="h-full">
     <head>
         <meta charset="utf-8">
@@ -17,53 +14,68 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="antialiased bg-[#000] text-mono-100 h-full">
-        <header>
-            <div class="relative flex flex-col justify-between">
-                <div class="bg-gradient-to-br from-cyan-200 to-cyan-600">
-                    {{ setting('home-hero')->img('pixellated')->attributes(['class' => 'object-cover w-full grayscale mix-blend-multiply']) }}
-                </div>
-                <div class="absolute top-0 left-0 w-full px-6 py-2 flex justify-between items-center">
-                    <x-logo.php-sussex class="w-[4.5rem] opacity-95" />
-                    <x-socials />
-                </div>
-                <x-container class="!bg-transparent">
-                    <h1 class="text-3xl font-extrabold uppercase tracking-tighter">September 10th</h1>
-                </x-container>
+        <x-skip-to-content />
+        <header class="border-b border-gray-800">
+            <div class="flex justify-end items-center">
             </div>
         </header>
-        <x-container tag="p" class="pt-3 pb-3 text-sm">
-            <span class="inline-block animate-ping rounded-full w-4 h-4"></span>
-            <span>Next meetup September 10th 2025</span>
-        </x-container>
 
-        <main class="divide-y divide-gray-800">
+        <main id="content" class="divide-y divide-gray-800">
+            <h1 class="sr-only">PHP Sussex</h1>
+            <div class="grid grid-cols-12">
+                <div class="col-span-2 flex flex-col">
+                    <div class="grow flex justify-center items-center">
+                        <x-logo.php-sussex class="w-1/2" />
+                    </div>
+                    <div class="px-6">
+                        <x-type.primary-upper tag="h2">Socials</x-type.primary-upper>
+                        <x-socials class="-ml-3 justify-between" />
+                    </div>
+                </div>
+                <x-home.hero class="col-span-10" />
+            </div>
 
-            <x-section>
-                <h1 class="text-4xl font-extrabold uppercase">PHP Sussex</h1>
-                <p>PHP Sussex is a free, open to all, meetup based in Brighton, UK.</p>
-                <p>We're a community of developers who love working with the web and getting sh*t delivered with PHP</p>
-            </x-section>
+            <div class="grid grid-cols-12">
+                <div class="col-span-2"></div>
+                <div class="col-span-10">
+                </div>
+            </div>
 
-            <x-section tag="section">
-                <h2 class="tracking-wide text-gray-400 text-sm">
+            <div class="grid grid-cols-12 divide-x divide-gray-800">
+                <div class="col-span-2"></div>
+                <div class="col-span-8 p-8">
+                    <x-type.primary-upper class="mb-3">About us</x-type.primary-upper>
+                    <div class="text-4xl font-extrabold uppercase mb-4">
+                        <p class="inline">PHP Sussex is a free, open to all, meetup based in Brighton, UK.</p>
+                    </div>
+                    <p class="text-mono-400">We're a community of developers who love working with the web and getting sh<span class="text-primary-400">*</span>t done with PHP (and JavaScript and CSS and Tailwind and TypeScript and NodeJS and React and Vue and Python and&hellip;).</p>
+                </div>
+            </div>
+
+
+            <div class="grid grid-cols-12 divide-x divide-gray-800">
+                <div class="col-span-2"></div>
+                <div class="col-span-8 p-8">
+                    <h2 class="tracking-wide text-gray-400 text-sm">
                     <pre>
 //
-// We couldn't do this without support from
+// We couldn't do this without
 //
                     </pre>
-                </h2>
-                <div class="text-mono-700 flex justify-between gap-10">
-                    <x-sponsor name="Tillo" provides="Drinks" url="https://tillo.com" />
-                    <x-sponsor name="Runway East" provides="Pizza & Venue" url="https://runwayea.st" />
-                    <x-sponsor name="Silicon Brighton" provides="Support & AV" url="https://siliconbrighton.com" />
+                    </h2>
+                    <div class="text-mono-700 flex justify-between gap-10">
+                        <x-sponsor name="Tillo" provides="Drinks" url="https://tillo.com" />
+                        <x-sponsor name="Runway East" provides="Pizza & Venue" url="https://runwayea.st" />
+                        <x-sponsor name="Silicon Brighton" provides="Support & AV" url="https://siliconbrighton.com" />
+                    </div>
                 </div>
-            </x-section>
+            </div>
         </main>
 
         <x-section tag="footer" class="border-t border-gray-800">
             <div class="flex flex-col gap-2">
                 <small class="flex gap-1 items-center">
-                    This site is powered by Laravel
+                    This site is powered by <a href="https://laravel.com/" class="link link-focus !decoration-1">Laravel</a>
                     <x-icon.laravel class="w-5 h-5 text-primary-400" />
                     and GitHub pages &ndash; <span class="italic">but how? Come along and ask us!</span>
                 </small>
