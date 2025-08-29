@@ -6,6 +6,53 @@
 @source '../**/*.js';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    --font-sans: 'Jetbrains Mono', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+
+    --color-primary-50: var(--color-cyan-50);
+    --color-primary-100: var(--color-cyan-100);
+    --color-primary-200: var(--color-cyan-200);
+    --color-primary-300: var(--color-cyan-300);
+    --color-primary-400: var(--color-cyan-400);
+    --color-primary-500: var(--color-cyan-500);
+    --color-primary-600: var(--color-cyan-600);
+    --color-primary-700: var(--color-cyan-700);
+    --color-primary-800: var(--color-cyan-800);
+    --color-primary-900: var(--color-cyan-900);
+    --color-primary-950: var(--color-cyan-950);
+
+    --color-accent-50: var(--color-amber-50);
+    --color-accent-100: var(--color-amber-100);
+    --color-accent-200: var(--color-amber-200);
+    --color-accent-300: var(--color-amber-300);
+    --color-accent-400: var(--color-amber-400);
+    --color-accent-500: var(--color-amber-500);
+    --color-accent-600: var(--color-amber-600);
+    --color-accent-700: var(--color-amber-700);
+    --color-accent-800: var(--color-amber-800);
+    --color-accent-900: var(--color-amber-900);
+    --color-accent-950: var(--color-amber-950);
+
+    --color-mono-50: var(--color-gray-50);
+    --color-mono-100: var(--color-gray-100);
+    --color-mono-200: var(--color-gray-200);
+    --color-mono-300: var(--color-gray-300);
+    --color-mono-400: var(--color-gray-400);
+    --color-mono-500: var(--color-gray-500);
+    --color-mono-600: var(--color-gray-600);
+    --color-mono-700: var(--color-gray-700);
+    --color-mono-800: var(--color-gray-800);
+    --color-mono-900: var(--color-gray-900);
+    --color-mono-950: var(--color-gray-950);
+}
+
+@layer components {
+    .link-focus {
+        @apply focus-visible:outline-none focus-visible:!bg-accent-500 focus-visible:!text-gray-950;
+        @apply focus-visible:no-underline px-1 -mx-1 py-0.5 -my-0.5;
+    }
+
+    .link {
+        @apply underline decoration-2 underline-offset-2 decoration-primary-500;
+    }
 }
