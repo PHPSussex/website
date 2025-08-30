@@ -1,1 +1,1 @@
-<p {{ $attributes->class('text-mono-400 leading-loose') }}>{{ $slot }}</p>
+<x-type tag="p" variant="dim" {{ $attributes->class('leading-loose') }}>{{ $slot }}</x-type>

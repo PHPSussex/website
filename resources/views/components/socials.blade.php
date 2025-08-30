@@ -1,5 +1,5 @@
 @use(App\Enums\Socials)
-<ul {{ $attributes->class('flex') }}>
+<ul {{ $attributes->class('inline-flex gap-4') }}>
     @foreach (Socials::cases() as $social)
         <li>
             <a
