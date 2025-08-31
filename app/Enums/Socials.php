@@ -17,6 +17,14 @@ enum Socials: string
         return Str::of($this->value)->camel()->kebab()->prepend('icon.')->value();
     }
 
+    public function label(): string
+    {
+        return match ($this) {
+            self::X => 'X [Twitter]',
+            default => Str::of($this->value)->headline()->value(),
+        };
+    }
+
     public function url(): string
     {
         return match ($this) {

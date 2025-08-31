@@ -5,8 +5,8 @@
     $variants = [
         'primary' => 'text-primary-400',
         'dim' => 'text-mono-400',
-        'display' => 'text-4xl font-extrabold uppercase',
-        'upper' => 'uppercase tracking-wide text-sm',
+        'display' => 'text-xl md:text-4xl font-extrabold uppercase',
+        'upper' => 'uppercase tracking-wide',
     ];
     $variant = Collection::make(explode(' ', $variant))
         ->map(fn (string $variant) => trim($variant))
