@@ -9,7 +9,7 @@
                     'focus-visible:outline-none focus-visible:bg-amber-500 focus-visible:text-mono-950'
                 ])
             >
-                <x-dynamic-component :component="$social->icon()" class="w-8 h-8" />
+                <x-dynamic-component :component="$social->icon()" class="w-12 h-12" />
             </a>
         </li>
     @endforeach

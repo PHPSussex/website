@@ -13,7 +13,7 @@
     $postClasses = $preClasses;
 @endphp
 <{{ $tag }} class="grid grid-cols-12">
-    @if ($pre?->hasActualContent())
+    @if ($pre)
         <div {{ $pre->attributes->class([$preClasses, $padding]) }}>{{ $pre }}</div>
     @else
         <div @class([$preClasses, $padding])></div>
@@ -35,7 +35,7 @@
     </div>
 
     @unless($postCollapse)
-        @if($post?->hasActualContent())
+        @if($post)
             <div {{ $post->attributes([$postClasses, $padding]) }}></div>
         @else
             <div @class([$postClasses, $padding])></div>
