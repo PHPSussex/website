@@ -1,8 +1,9 @@
 <?php
     use function App\setting;
 ?>
-<div {{ $attributes->class("h-[10rem] md:h-[14rem] lg:h-[18rem] xl:h-[20rem] bg-gradient-to-br from-cyan-300 to-cyan-700 overflow-hidden") }}>
+<div {{ $attributes->class("h-[10rem] md:h-[14rem] lg:h-[18rem] xl:h-[20rem] bg-gradient-to-br from-cyan-300 to-cyan-700 overflow-hidden relative") }}>
     {{ setting('home-hero')
         ->img('pixellated')
-        ->attributes(['class' => 'object-cover w-full min-h-full grayscale mix-blend-multiply']) }}
+        ->attributes(['class' => 'object-cover w-full min-h-full grayscale']) }}
+    <div class="absolute inset-0 bg-gradient-to-br from-cyan-300 to-cyan-700 mix-blend-multiply"></div>
 </div>
