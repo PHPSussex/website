@@ -289,3 +289,4 @@ middleware(['auth', 'verified', 'can:manage-products']);
 | decoration-slice | box-decoration-slice |
 | decoration-clone | box-decoration-clone |
 </laravel-boost-guidelines>
+- Use the PHPUnit Test attribute to mark tests

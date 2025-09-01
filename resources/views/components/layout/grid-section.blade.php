@@ -25,11 +25,12 @@
                     'col-span-11 md:col-span-10' => $collapse,
                     'col-span-11 md:col-span-8 xl:col-span-7 xl:col-span-6' => !$collapse,
                     'border-r' => !$collapse,
-                ])
-                ->when($heading, function (ComponentAttributeBag $attributes) use ($heading) {
-                    $attributes->merge(['id' => Str::of($heading)->kebab()->value()]);
-                })
-     }}>
+        ]) }}
+
+        @if ($heading)
+            id="{{ Str::of($heading)->replace('&amp;', '')->kebab()->value() }}"
+        @endif
+     >
         @if($heading)
             <x-type tag="h2" variant="primary upper" class="mb-3">{!! $heading !!}</x-type>
         @endif
