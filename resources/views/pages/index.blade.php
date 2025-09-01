@@ -42,7 +42,9 @@
             </div>
             <x-type.para>A big juicy IRL talk + lightning talk combo not to be missed. Featuring Laravel scene regular Dan Johnson of TRYBE and Adria Figueres Garcia of Hove-based startup and PHP Sussex sponsor, Tillo.</x-type.para>
             <x-type.para>Afterwards we'll head to <a class="link link-focus" href="https://www.unbarredbrewery.com/pages/taproom">UnBarred taproom</a>, 2 minutes from our venue, for good vibes and a craft beer / soft-drink or two to wrap the night up.</x-type.para>
-            <a href="https://www.meetup.com/php-sussex/" @class([
+            <a
+                href="https://www.meetup.com/php-sussex/events/308915820/"
+                @class([
                 'mt-4 text-xl inline-block bg-primary-500 hover:bg-primary-400',
                 'text-mono-900 pl-6 pr-8 py-2 rounded-sm focus-visible:bg-accent-500',
                 'focus-visible:outline-none',
