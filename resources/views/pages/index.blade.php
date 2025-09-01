@@ -99,9 +99,19 @@
         <x-layout.grid-section heading="Sponsors &amp; Support">
             <x-type.para class="mb-8">We couldn't do it on our own. Massive thanks to our amazing friends:</x-type.para>
             <div class="text-mono-700 flex flex-wrap gap-8 lg:flex-row justify-between">
+                <x-sponsor
+                    name="Silicon Brighton"
+                    provides="Support & AV"
+                    url="https://siliconbrighton.com"
+                    logo-class="scale-115 translate-x-[1rem]"
+                />
+                <x-sponsor
+                    name="Runway East"
+                    provides="Pizza & Venue"
+                    url="https://runwayea.st"
+                    logo-class="scale-105 translate-x-[0.4rem]"
+                />
                 <x-sponsor name="Tillo" provides="Drinks" url="https://tillo.com" />
-                <x-sponsor name="Runway East" provides="Pizza & Venue" url="https://runwayea.st" />
-                <x-sponsor name="Silicon Brighton" provides="Support & AV" url="https://siliconbrighton.com" />
             </div>
         </x-layout.grid-section>
 
