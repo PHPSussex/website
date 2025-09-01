@@ -98,7 +98,7 @@
 
         <x-layout.grid-section heading="Sponsors &amp; Support">
             <x-type.para class="mb-8">We couldn't do it on our own. Massive thanks to our amazing friends:</x-type.para>
-            <div class="text-mono-700 flex flex-wrap gap-8 lg:flex-row justify-between">
+            <div class="flex flex-wrap gap-8 lg:flex-row justify-between">
                 <x-sponsor
                     name="Silicon Brighton"
                     provides="Support & AV"
