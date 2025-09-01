@@ -5,5 +5,5 @@
     {{ setting('home-hero')
         ->img('pixellated')
         ->attributes(['class' => 'object-cover w-full min-h-full grayscale']) }}
-    <div class="absolute inset-0 bg-gradient-to-br from-cyan-300 to-cyan-700 mix-blend-multiply"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-cyan-200 to-cyan-600 mix-blend-multiply"></div>
 </div>
