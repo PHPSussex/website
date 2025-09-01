@@ -9,7 +9,7 @@
                 href="{{ $social->url() }}"
                 @class([
                     'group flex items-center justify-center',
-                    'p-2 py-4 md:py-6 lg:py-8 bg-gray-950/0 hover:bg-mono-800',
+                    'p-2 py-4 md:py-6 lg:py-8 bg-gray-950/0 hover:bg-mono-900',
                     'focus-visible:outline-none focus-visible:bg-amber-500',
                     'focus-visible:text-mono-950',
                 ])
@@ -23,5 +23,5 @@
             </a>
         </li>
     @endforeach
-    <span class="hidden sm:inline border-t lg:border-r border-mono-800"></span>
+    <span class="border-t lg:border-r border-mono-800"></span>
 </ul>

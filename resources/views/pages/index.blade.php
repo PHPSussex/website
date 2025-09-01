@@ -2,7 +2,7 @@
     <header class="border-b border-gray-800 divide-y divide-gray-800">
         <div class="md:hidden">
             <x-layout.grid-section>
-                <x-logo.php-sussex class="w-20" />
+                <x-logo.php-sussex class="w-18" />
             </x-layout.grid-section>
         </div>
         <x-layout.grid-section :no-padding="true" :collapse="true">
@@ -46,7 +46,7 @@
                 'mt-4 text-xl inline-block bg-primary-500 hover:bg-primary-400',
                 'text-mono-900 pl-6 pr-8 py-2 rounded-sm focus-visible:bg-accent-500',
                 'focus-visible:outline-none',
-                'active:scale-95',
+                'active:scale-95 whitespace-nowrap',
             ])>
                 <x-icon.meetup class="-translate-x-1 w-8 h-8 inline-block" />
                 <span class="inline-block translate-y-[1px]">Sign up on Meetup</span>
