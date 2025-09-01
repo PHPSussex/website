@@ -23,7 +23,7 @@
             <x-type tag="p" variant="display" class="mb-3">PHP Sussex is a free, open to all meetup, based in Brighton UK.</x-type>
             <div class="space-y-3">
                 <x-type.para class="text-mono-400">We're a community of folks who <x-type.emoji text="love" icon="heart" /> working with the web and
-                    getting <x-type.emoji text="sh*t" icon="poo" /> done with PHP based applications.
+                    getting <x-type.emoji text="sh*t" icon="poo" /> done fast using PHP based applications.
                 </x-type.para>
 
                 <x-type.para>We meet every couple of months to socialise, and share ideas
