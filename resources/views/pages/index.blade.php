@@ -45,13 +45,16 @@
             <a
                 href="https://www.meetup.com/php-sussex/events/308915820/"
                 @class([
-                'mt-4 text-xl inline-block bg-primary-500 hover:bg-primary-400',
+                'text-center',
+                'mt-4 text-xl block sm:inline-block bg-primary-500 hover:bg-primary-400',
                 'text-mono-900 pl-6 pr-8 py-2 rounded-sm focus-visible:bg-accent-500',
                 'focus-visible:outline-none',
                 'active:scale-95 whitespace-nowrap',
             ])>
                 <x-icon.meetup class="-translate-x-1 w-8 h-8 inline-block" />
-                <span class="inline-block translate-y-[1px]">Sign up on Meetup</span>
+                <span class="inline-block translate-y-[1px]">
+                    Sign up <span class="hidden sm:inline">on Meetup</span>
+                </span>
             </a>
         </x-layout.grid-section>
 
