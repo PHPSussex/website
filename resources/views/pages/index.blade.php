@@ -26,7 +26,7 @@
                     getting <x-type.emoji text="sh*t" icon="poo" /> done fast using PHP based applications.
                 </x-type.para>
 
-                <x-type.para>We meet every couple of months to socialise, and share ideas
+                <x-type.para>We meet every couple of months to socialise and share ideas
                 over drinks, pizza and presentations from some awesome speakers from the PHP commmunity.</x-type.para>
             </div>
         </x-layout.grid-section>
