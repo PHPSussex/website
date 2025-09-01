@@ -4,6 +4,7 @@
     'pre' => null,
     'post' => null,
     'noPadding' => false,
+    'collapse' => false,
 ])
 @use(Illuminate\View\ComponentAttributeBag)
 @php
@@ -21,7 +22,9 @@
     <div {{ $attributes
                 ->class([
                     'border-l border-mono-800', $padding => !$noPadding,
-                    'col-span-11 md:col-span-10',
+                    'col-span-11 md:col-span-10' => $collapse,
+                    'col-span-11 md:col-span-8 xl:col-span-7 xl:col-span-6' => !$collapse,
+                    'border-r' => !$collapse,
                 ])
                 ->when($heading, function (ComponentAttributeBag $attributes) use ($heading) {
                     $attributes->merge(['id' => Str::of($heading)->kebab()->value()]);

@@ -5,7 +5,7 @@
                 <x-logo.php-sussex class="w-20" />
             </x-layout.grid-section>
         </div>
-        <x-layout.grid-section :no-padding="true">
+        <x-layout.grid-section :no-padding="true" :collapse="true">
             <x-slot:pre class="flex flex-col">
                 <div class="grow flex justify-center items-center">
                     <x-logo.php-sussex class="hidden md:block w-20 2xl:w-24" />
@@ -40,7 +40,7 @@
                     <time>10th September 2025 Doors 6:30pm</time>, Runway East nr. Preston Circus, Brighton
                 </x-type>
             </div>
-            <x-type.para>A big juicy IRL double-whammy not to be missed featuring Laravel scene regular Dan Johnson of TRYBE and Adria Figueres Garcia of Hove-based startup and PHP Sussex sponsor, Tillo.</x-type.para>
+            <x-type.para>A big juicy IRL talk + lightning talk combo not to be missed. Featuring Laravel scene regular Dan Johnson of TRYBE and Adria Figueres Garcia of Hove-based startup and PHP Sussex sponsor, Tillo.</x-type.para>
             <x-type.para>Afterwards we'll head to <a class="link link-focus" href="https://www.unbarredbrewery.com/pages/taproom">UnBarred taproom</a>, 2 minutes from our venue, for good vibes and a craft beer / soft-drink or two to wrap the night up.</x-type.para>
             <a href="https://www.meetup.com/php-sussex/" @class([
                 'mt-4 text-xl inline-block bg-primary-500 hover:bg-primary-400',
@@ -96,7 +96,7 @@
 
         <x-layout.grid-section heading="Sponsors &amp; Support">
             <x-type.para class="mb-8">We couldn't do it on our own. Massive thanks to our amazing friends:</x-type.para>
-            <div class="text-mono-700 grid grid-cols-1 gap-8">
+            <div class="text-mono-700 flex flex-wrap gap-8 lg:flex-row justify-between">
                 <x-sponsor name="Tillo" provides="Drinks" url="https://tillo.com" />
                 <x-sponsor name="Runway East" provides="Pizza & Venue" url="https://runwayea.st" />
                 <x-sponsor name="Silicon Brighton" provides="Support & AV" url="https://siliconbrighton.com" />
@@ -106,7 +106,7 @@
         <x-layout.grid-divider />
     </main>
 
-    <x-layout.grid-section tag="footer" class="border-t border-gray-800">
+    <x-layout.grid-section tag="footer" class="border-t border-gray-800" :collapse="true">
         <x-slot:pre class="border-t border-gray-800"></x-slot:pre>
         <div class="flex flex-col gap-2">
             <small>
