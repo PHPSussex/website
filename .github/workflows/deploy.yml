@@ -35,6 +35,7 @@ jobs:
         run: |
           php -r "file_exists('.env') || copy('.env.example', '.env');"
           php artisan key:generate --no-interaction
+          php artisan storage:link
           chmod -R 755 storage bootstrap/cache
 
       - name: Setup Node.js
