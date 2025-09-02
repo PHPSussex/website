@@ -21,7 +21,7 @@ class SettingTest extends TestCase
     }
 
     // phpcs:ignore
-    public function test_modelClass_scope(): void
+    public function test_model_class_scope(): void
     {
         $other = new class extends Setting {};
         $other->save();

@@ -12,6 +12,7 @@ class HomeHero extends Setting implements HasMedia
 {
     /** @use HasFactory<\Database\Factories\Settings\HomeHeroFactory> */
     use HasFactory;
+
     use InteractsWithMedia;
 
     public function registerMediaCollections(): void
@@ -19,7 +20,7 @@ class HomeHero extends Setting implements HasMedia
         $this->addMediaCollection('image')->singleFile();
     }
 
-    public function registerMediaConversions(Media $media = null): void
+    public function registerMediaConversions(?Media $media = null): void
     {
         $this->addMediaConversion('pixellated')
             ->performOnCollections('image')

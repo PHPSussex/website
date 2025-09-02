@@ -3,10 +3,10 @@
 namespace Database\Seeders;
 
 use App\Models\Settings\HomeHero;
-use App\Models\Settings\PortraitYannick;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Settings\ImageSetting;
+// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Settings\PortraitJoby;
+use App\Models\Settings\PortraitYannick;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder

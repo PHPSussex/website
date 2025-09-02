@@ -67,6 +67,9 @@
         ],
         "build": [
             "@php artisan export"
+        ],
+        "format": [
+            "./vendor/bin/pint"
         ]
     },
     "extra": {
