@@ -2,7 +2,7 @@
 
 namespace App\Models\Settings;
 
-class PortraitYannick extends ImageSetting
+class PortraitJoby extends ImageSetting
 {
     //
 }
