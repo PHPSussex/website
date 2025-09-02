@@ -37,7 +37,7 @@
             <div class="-rotate-2 inline-block bg-mono-300 text-mono-900 px-6 py-3 -mt-1 -ml-8 mb-6 space-y-1">
                 <x-type tag="p" variant="display">Encoding Explained &amp; <span class="text-nowrap">Debugging Self-Doubt</span></x-type>
                 <x-type tag="p" variant="upper" class="mb-3 md:font-extrabold !md:text-lg">
-                    <time>10th September 2025 Doors 6:30pm</time>, Runway East nr. Preston Circus, Brighton
+                    <time> Wed 10th September 2025 Doors 6:30pm</time>, Runway East nr. Preston Circus, Brighton
                 </x-type>
             </div>
             <x-type.para>A big juicy IRL talk + lightning talk combo not to be missed. Featuring Laravel scene regular Dan Johnson of TRYBE and Adria Figueres Garcia of Hove-based startup and PHP Sussex sponsor, Tillo.</x-type.para>
