@@ -5,7 +5,11 @@ namespace Database\Seeders;
 use App\Models\Setting;
 use App\Models\Settings\HomeHero;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Settings\ImageSetting;
+use App\Models\Settings\PortraitJoby;
+use App\Models\Settings\PortraitYannick;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Collection;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,12 +18,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        if (! HomeHero::first()) {
-            $hero = HomeHero::create();
-            $hero
-                ->addMedia(resource_path('images/hero.jpg'))
-                ->preservingOriginal()
-                ->toMediaCollection('image');
-        }
+        HomeHero::firstOrCreate()
+            ->addMedia(resource_path('images/hero.jpg'))
+            ->preservingOriginal()
+            ->toMediaCollection(ImageSetting::$collection);
+
+        PortraitYannick::firstOrCreate()
+            ->addMedia(resource_path('images/yannick.jpg'))
+            ->preservingOriginal()
+            ->toMediaCollection(ImageSetting::$collection);
+
+        PortraitJoby::firstOrCreate()
+            ->addMedia(resource_path('images/joby.jpg'))
+            ->preservingOriginal()
+            ->toMediaCollection(ImageSetting::$collection);
     }
 }

@@ -1,3 +1,6 @@
+<?php
+    use function App\setting;
+?>
 <x-layout.html>
     <header class="border-b border-gray-800 divide-y divide-gray-800">
         <div class="md:hidden">
@@ -75,14 +78,14 @@
                 <x-home.organizer
                     class="py-6"
                     name="Yannick"
-                    :img="Vite::asset('resources/images/yannick.jpg')"
+                    :img="setting('portrait-yannick')"
                     pronounced="Yan-eek"
                     linkedin="https://linkedin.com/in/yannickchenot"
                 />
                 <x-home.organizer
                     class="py-6"
                     name="Joby"
-                    :img="Vite::asset('resources/images/joby.jpg')"
+                    :img="setting('portrait-joby')"
                     pronounced="Joe-bee"
                     linkedin="https://linkedin.com/in/jobyharding"
                 />
