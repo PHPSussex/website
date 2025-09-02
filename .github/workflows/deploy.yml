@@ -33,7 +33,7 @@ jobs:
           php -r "file_exists('.env') || copy('.env.example', '.env');"
           php artisan key:generate --no-interaction
           chmod -R 755 storage bootstrap/cache
-          echo "APP_URL=/php-sussex-redesign" >> $GITHUB_ENV
+          echo "APP_URL=https://$(cat public/CNAME)" >> .env
 
       - name: Install PHP Dependencies
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
