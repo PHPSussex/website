@@ -31,6 +31,9 @@ jobs:
       - name: Copy .env
         run: php -r "file_exists('.env') || copy('.env.example', '.env');"
 
+      - name: Set APP_URL
+        run: echo "APP_URL=https://jobyh.github.io/php-sussex-redesign" >> .env
+
       - name: Install PHP Dependencies
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
 
