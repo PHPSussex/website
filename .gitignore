@@ -9,6 +9,7 @@
 /.fleet
 /.idea
 /.junie/mcp
+/.mcp.json
 /.nova
 /.phpunit.cache
 /.vscode
