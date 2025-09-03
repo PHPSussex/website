@@ -8,6 +8,7 @@
 /.claude/settings.local.json
 /.fleet
 /.idea
+/.junie/mcp
 /.nova
 /.phpunit.cache
 /.vscode
