@@ -30,7 +30,7 @@
                 </x-type.para>
 
                 <x-type.para>We meet every couple of months to socialise and share ideas
-                over drinks, pizza and presentations from some awesome speakers from the PHP commmunity.</x-type.para>
+                over drinks, pizza and presentations by some awesome speakers from the PHP commmunity.</x-type.para>
             </div>
         </x-layout.grid-section>
 
