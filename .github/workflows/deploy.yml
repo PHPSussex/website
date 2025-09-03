@@ -34,6 +34,7 @@ jobs:
       - name: Setup Laravel environment
         run: |
           php -r "file_exists('.env') || copy('.env.example', '.env');"
+          echo "FATHOM_SITE=${{ secrets.FATHOM_SITE }}" >> $GITHUB_ENV
           php artisan key:generate --no-interaction
           chmod -R 755 storage bootstrap/cache
 
