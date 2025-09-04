@@ -23,7 +23,7 @@
         <h1 class="sr-only">PHP Sussex</h1>
 
         <x-layout.grid-section heading="About us">
-            <x-type tag="p" variant="display" class="mb-3">PHP Sussex is a free, open to all meetup, based in Brighton UK.</x-type>
+            <x-type tag="p" variant="display headline" class="mb-3">PHP Sussex is a free, open to all meetup, based in Brighton UK.</x-type>
             <div class="space-y-3">
                 <x-type.para class="text-mono-400">We're a community of folks who <x-type.emoji text="love" icon="heart" /> working with the web and
                     getting <x-type.emoji text="sh*t" icon="poo" /> done fast using PHP based applications.
@@ -38,7 +38,7 @@
 
         <x-layout.grid-section heading="Next Event">
             <div class="-rotate-2 inline-block bg-mono-300 text-mono-900 px-6 py-3 -mt-1 -ml-8 mb-6 space-y-1">
-                <x-type tag="p" variant="display">Encoding Explained &amp; <span class="text-nowrap">Debugging Self-Doubt</span></x-type>
+                <x-type tag="p" variant="display headline">Encoding Explained &amp; <span class="text-nowrap">Debugging Self-Doubt</span></x-type>
                 <x-type tag="p" variant="upper" class="mb-3 md:font-extrabold !md:text-lg">
                     <time> Wed 10th September 2025 Doors 6:30pm</time>, Runway East nr. Preston Circus, Brighton
                 </x-type>
@@ -124,15 +124,5 @@
         <x-layout.grid-divider />
     </main>
 
-    <x-layout.grid-section tag="footer" class="border-t border-gray-800" :collapse="true">
-        <x-slot:pre class="border-t border-gray-800"></x-slot:pre>
-        <div class="flex flex-col gap-2">
-            <small>
-                This site is powered by
-                <span class="inline-flex gap-1"><a href="https://laravel.com/" class="link link-focus !decoration-1">Laravel</a>
-                <x-icon.laravel class="w-5 h-5 text-primary-400" /></span>
-                and GitHub pages &ndash; <span class="italic">but how? Come along and ask&nbsp;us!</span>
-            </small>
-        </div>
-    </x-layout.grid-section>
+    <x-layout.footer />
 </x-layout.html>
