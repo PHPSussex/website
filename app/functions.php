@@ -28,3 +28,18 @@ function variant(string $variant, array $variants): array
 
     return array_values(Arr::only($variants, $variantKeys));
 }
+
+function theme(string ...$keys): string
+{
+    $classes = [];
+
+    foreach ($keys as $key) {
+        $classes[] = match ($key) {
+            'border' => 'border-gray-200 dark:border-gray-800',
+            'divide' => 'divide-gray-200 dark:divide-gray-800',
+            default => '',
+        };
+    }
+
+    return implode(' ', $classes);
+}

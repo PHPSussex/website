@@ -1,5 +1,6 @@
 @props(['name', 'img', 'pronounced', 'sub', 'linkedin'])
 @use(Spatie\MediaLibrary\MediaCollections\Models\Media)
+@use(function App\theme)
 @php
     /**
      * @var Media $img
@@ -12,7 +13,8 @@
     </p>
     <div
         @class([
-            'w-36 h-36 rounded-full border border-mono-800 overflow-hidden relative',
+            theme('border'),
+            'w-36 h-36 rounded-full border overflow-hidden relative',
             'bg-gradient-to-br from-white to-primary-100 dark:from-primary-200 dark:to-primary-700',
         ])
     >

@@ -1,4 +1,5 @@
 @use(Illuminate\Support\Facades\Vite)
+@use(function App\theme)
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="h-full sm:text-lg xl:text-xl">
 <head>
@@ -26,7 +27,13 @@
         <script src="https://cdn.usefathom.com/script.js" data-site="{{ config('services.fathom.site_id') }}" defer></script>
     @endif
 </head>
-<body class="antialiased bg-mono-white text-mono-800 dark:bg-black dark:text-mono-300 h-full">
+<body
+    @class([
+        'antialiased bg-mono-white text-mono-800',
+        'dark:bg-black dark:text-mono-300 h-full',
+        theme('border'),
+    ])
+>
     <x-skip-to-content />
     {{ $slot }}
 </body>

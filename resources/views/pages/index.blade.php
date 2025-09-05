@@ -1,8 +1,7 @@
-<?php
-    use function App\setting;
-?>
+@use(function App\setting)
+@use(function App\theme)
 <x-layout.html>
-    <header class="border-b border-gray-800 divide-y divide-gray-800">
+    <header @class(['border-b divide-y', theme('border', 'divide')])>
         <div class="md:hidden">
             <x-layout.grid-section>
                 <x-logo.php-sussex class="w-18" />
@@ -18,7 +17,7 @@
         </x-layout.grid-section>
     </header>
 
-    <main id="content" class="divide-y divide-gray-800">
+    <main id="content" @class(['divide-y', theme('divide')])>
 
         <h1 class="sr-only">PHP Sussex</h1>
 
@@ -37,20 +36,20 @@
         <x-layout.grid-divider />
 
         <x-layout.grid-section heading="Next Event">
-            <div class="-rotate-2 inline-block bg-mono-300 text-mono-900 px-6 py-3 -mt-1 -ml-8 mb-6 space-y-1">
+            <div class="-rotate-2 inline-block bg-mono-200 dark:bg-mono-300 text-mono-900 px-6 py-3 -mt-1 -ml-8 mb-6 space-y-1">
                 <x-type tag="p" variant="display headline">Encoding Explained &amp; <span class="text-nowrap">Debugging Self-Doubt</span></x-type>
                 <x-type tag="p" variant="upper" class="mb-3 md:font-extrabold !md:text-lg">
                     <time> Wed 10th September 2025 Doors 6:30pm</time>, Runway East nr. Preston Circus, Brighton
                 </x-type>
             </div>
-            <x-type.para>A big juicy IRL talk + lightning talk combo not to be missed. Featuring Laravel scene regular Dan Johnson of TRYBE and Adria Figueres Garcia of Hove-based startup and PHP Sussex sponsor, Tillo.</x-type.para>
-            <x-type.para>Afterwards we'll head to <a class="link link-focus" href="https://www.unbarredbrewery.com/pages/taproom">UnBarred taproom</a>, 2 minutes from our venue, for good vibes and a craft beer / soft-drink or two to wrap the night up.</x-type.para>
+            <x-type.para variant="dim">A big juicy IRL talk + lightning talk combo not to be missed. Featuring Laravel scene regular Dan Johnson of TRYBE and Adria Figueres Garcia of Hove-based startup and PHP Sussex sponsor, Tillo.</x-type.para>
+            <x-type.para variant="dim">Afterwards we'll head to <a class="link link-focus" href="https://www.unbarredbrewery.com/pages/taproom">UnBarred taproom</a>, 2 minutes from our venue, for good vibes and a craft beer / soft-drink or two to wrap the night up.</x-type.para>
             <a
                 data-event="meetup event click"
                 href="https://www.meetup.com/php-sussex/events/308915820/"
                 @class([
                     'text-center',
-                    'mt-4 text-xl block sm:inline-block bg-primary-400 hover:bg-primary-300 dark:bg-primary-500 dark:hover:bg-primary-400',
+                    'mt-4 text-xl block sm:inline-block text-white dark:text-black bg-primary-600 hover:bg-primary-500 dark:bg-primary-500 dark:hover:bg-primary-400',
                     'text-mono-900 pl-6 pr-8 py-2 rounded-sm focus-visible:bg-accent-500',
                     'focus-visible:outline-none',
                     'active:scale-95 whitespace-nowrap',
@@ -74,18 +73,19 @@
         <x-layout.grid-section heading="Organisers">
             <x-type.para class="mb-6">Need to know where the toilets are or which pizza is veggie, vegan&nbsp;/&nbsp;<span class="text-nowrap">gluten-free</span>?</x-type.para>
             <div @class([
-                '-mx-6 md:-mx-8 -mb-6 sm:-mb-8 grid grid-cols-1 sm:grid-cols-2',
-                'sm:divide-x divide-y sm:divide-y-0 divide-gray-800 border-t border-gray-800',
+                '-mx-6 md:-mx-8 -mb-6 md:-mb-8 grid grid-cols-1 sm:grid-cols-2',
+                'sm:divide-x divide-y sm:divide-y-0 border-t',
+                theme('border', 'divide')
             ])>
                 <x-home.organizer
-                    class="py-6"
+                    class="py-6 md:py-8"
                     name="Yannick"
                     :img="setting('portrait-yannick')"
                     pronounced="Yan-eek"
                     linkedin="https://linkedin.com/in/yannickchenot"
                 />
                 <x-home.organizer
-                    class="py-6"
+                    class="py-6 md:py-8"
                     name="Joby"
                     :img="setting('portrait-joby')"
                     pronounced="Joe-bee"

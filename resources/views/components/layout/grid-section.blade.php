@@ -1,3 +1,4 @@
+@use(function App\theme)
 @props([
     'heading' => null,
     'tag' => 'div',
@@ -6,11 +7,10 @@
     'noPadding' => false,
     'collapse' => false,
 ])
-@use(Illuminate\View\ComponentAttributeBag)
 @php
     $padding = 'p-6 md:p-8';
     $preClasses = 'col-span-1 md:col-span-2';
-    $postClasses = $preClasses;
+    $postClasses = $preClasses.' xl:col-span-3';
 @endphp
 <{{ $tag }} class="grid grid-cols-12">
     @if ($pre)
@@ -21,9 +21,10 @@
 
     <div {{ $attributes
                 ->class([
-                    'border-l border-mono-800', $padding => !$noPadding,
+                    theme('border'),
+                    'border-l', $padding => !$noPadding,
                     'col-span-11 md:col-span-10' => $collapse,
-                    'col-span-11 md:col-span-8 xl:col-span-7 xl:col-span-6' => !$collapse,
+                    'col-span-10 md:col-span-8 xl:col-span-7' => !$collapse,
                     'border-r' => !$collapse,
         ]) }}
 
@@ -36,4 +37,7 @@
         @endif
         {{ $slot }}
     </div>
+    @if (!$collapse && $post)
+        <div {{ $pre->attributes->class([$postClasses, $padding]) }}>{{ $pre }}</div>
+    @endif
 </{{ $tag }}>

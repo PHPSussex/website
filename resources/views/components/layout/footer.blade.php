@@ -1,6 +1,7 @@
-<x-layout.grid-section tag="footer" class="border-t border-gray-800">
-    <x-slot:pre class="border-t border-gray-800"></x-slot:pre>
-    <x-slot:post class="border-t border-gray-800"></x-slot:post>
+@use(function App\theme)
+<x-layout.grid-section tag="footer" @class(['border-t', theme('border')])>
+    <x-slot:pre @class(['border-t', theme('border')])></x-slot:pre>
+    <x-slot:post @class(['border-t', theme('border')])></x-slot:post>
     <div class="grid lg:grid-cols-2 gap-6 mb-6">
         <x-footer.item heading="Accessibility" icon="access">
             <x-type.para variant="small dim">
