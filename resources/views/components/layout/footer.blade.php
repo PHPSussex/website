@@ -27,7 +27,7 @@
     </div>
     <div class="flex flex-col gap-6">
         <small class="text-gray-400">
-            Designed & built by <a href="https://fullstackappco.com/?utm_source=phpsussex" class="link link-focus">Full Stack App Co.</a>
+            Designed & built by <a href="https://fullstackappco.com/?utm_source=PHP%20Sussex" class="link link-focus">Full Stack App Co.</a>
             copyright &copy; {{ now()->year }} PHP Sussex unless otherwise noted.
         </small>
         <small>
