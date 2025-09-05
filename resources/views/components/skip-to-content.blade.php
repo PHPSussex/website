@@ -4,4 +4,5 @@
     'focus-visible:py-2',
     'bg-accent-500 text-mono-950',
     'text-center font-bold',
+    'overflow-hidden',
 ])>Skip to content</a>
