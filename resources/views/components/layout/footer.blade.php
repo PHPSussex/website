@@ -1,5 +1,6 @@
 <x-layout.grid-section tag="footer" class="border-t border-gray-800">
     <x-slot:pre class="border-t border-gray-800"></x-slot:pre>
+    <x-slot:post class="border-t border-gray-800"></x-slot:post>
     <div class="grid lg:grid-cols-2 gap-6 mb-6">
         <x-footer.item heading="Accessibility" icon="access">
             <x-type.para variant="small">
@@ -24,7 +25,11 @@
             </x-type.para>
         </x-footer.item>
     </div>
-    <div class="flex flex-col gap-2">
+    <div class="flex flex-col gap-6">
+        <small class="text-gray-400">
+            Designed & built by <a href="https://fullstackappco.com/?utm_source=phpsussex" class="link link-focus">Full Stack App Co.</a>
+            copyright &copy; {{ now()->year }} PHP Sussex unless otherwise noted.
+        </small>
         <small>
             This site is powered by
             <span class="inline-flex gap-1"><a href="https://laravel.com/" class="link link-focus !decoration-1">Laravel</a>
