@@ -97,6 +97,16 @@
         <x-layout.grid-section heading="Speak">
             <x-type.para>Want to speak at PHP Sussex? Amazing!  We'd love to hear from you.
             Complete the form below and we'll get back to you.</x-type.para>
+            <div
+                role="note"
+                @class([
+                    'flex items-start gap-2 bg-primary-500/20 p-2 rounded-sm mt-4',
+                    'border-l-4 border-primary-500'
+                ])
+            >
+                <x-icon.info class="translate-y-0.5 w-5 h-5 flex-shrink-0 text-primary-500" />
+                <p class="text-sm text-mono-300">Please note the speaker form link will take you to Google&nbsp;Forms</p>
+            </div>
             <a href="https://forms.gle/tHe66kBsgFbnM5ZW7" class="mt-4 text-2xl inline-block link link-focus">Speaker form</a>
         </x-layout.grid-section>
 
