@@ -54,9 +54,16 @@
     }
 
     .link {
-        @apply text-mono-300;
+        @apply text-mono-800;
         @apply underline decoration-1 underline-offset-2 decoration-primary-500;
-        @apply hover:text-mono-100 hover:decoration-primary-300;
+        @apply hover:text-black;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .link {
+            @apply text-mono-300;
+            @apply hover:text-mono-100 hover:decoration-primary-300;
+        }
     }
 
     .bg-lines {

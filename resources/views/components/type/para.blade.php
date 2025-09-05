@@ -2,7 +2,9 @@
 @use(function App\variant)
 @php
 $variantClasses = variant($variant, [
-    'small' => 'text-sm lg:text-xs !leading-relaxed'
+    'small' => 'leading-relaxed'
 ])
 @endphp
-<x-type tag="p" variant="dim" {{ $attributes->class(['md:leading-loose mb-3', ...$variantClasses]) }}>{{ $slot }}</x-type>
+<x-type
+    {{ $attributes->merge(['tag' => 'p', 'variant' => $variant])->class(['md:leading-loose mb-3', ...$variantClasses]) }}
+>{{ $slot }}</x-type>

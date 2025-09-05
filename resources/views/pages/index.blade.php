@@ -25,11 +25,11 @@
         <x-layout.grid-section heading="About us">
             <x-type tag="p" variant="display headline" class="mb-3">PHP Sussex is a free, open to all meetup, based in Brighton UK.</x-type>
             <div class="space-y-3">
-                <x-type.para class="text-mono-400">We're a community of folks who <x-type.emoji text="love" icon="heart" /> working with the web and
+                <x-type.para variant="dim">We're a community of folks who <x-type.emoji text="love" icon="heart" /> working with the web and
                     getting <x-type.emoji text="sh*t" icon="poo" /> done fast using PHP based applications.
                 </x-type.para>
 
-                <x-type.para>We meet every couple of months to socialise and share ideas
+                <x-type.para variant="dim">We meet every couple of months to socialise and share ideas
                 over drinks, pizza and presentations by some awesome speakers from the PHP commmunity.</x-type.para>
             </div>
         </x-layout.grid-section>
@@ -50,7 +50,7 @@
                 href="https://www.meetup.com/php-sussex/events/308915820/"
                 @class([
                     'text-center',
-                    'mt-4 text-xl block sm:inline-block bg-primary-500 hover:bg-primary-400',
+                    'mt-4 text-xl block sm:inline-block bg-primary-400 hover:bg-primary-300 dark:bg-primary-500 dark:hover:bg-primary-400',
                     'text-mono-900 pl-6 pr-8 py-2 rounded-sm focus-visible:bg-accent-500',
                     'focus-visible:outline-none',
                     'active:scale-95 whitespace-nowrap',
@@ -103,11 +103,13 @@
                 role="note"
                 @class([
                     'flex items-start gap-2 bg-primary-500/20 p-2 mt-4',
-                    'border-l-4 border-primary-500'
+                    'border-l-4 border-primary-500 rounded-sm'
                 ])
             >
-                <x-icon.info class="w-5 h-5 flex-shrink-0 text-primary-500" />
-                <p class="text-sm text-mono-300">Please note the speaker form link will take you to Google&nbsp;Forms</p>
+                <x-type variant="primary">
+                    <x-icon.info class="w-5 h-5 flex-shrink-0 text-primary-500" />
+                </x-type>
+                <x-type class="text-sm">The speaker form link will take you to Google&nbsp;Forms</x-type>
             </div>
             <a
                 data-event="speaker form click"

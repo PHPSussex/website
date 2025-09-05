@@ -4,6 +4,9 @@
         <li @class([
             'relative group',
             'border-t border-r border-mono-800',
+            'nth-2:border-r-0 nth-4:border-r-0',
+            'sm:nth-2:border-r sm:nth-4:border-r',
+            'sm:nth-3:border-r-0',
         ])>
             <a
                 href="{{ $social->url() }}"
@@ -26,5 +29,5 @@
             </a>
         </li>
     @endforeach
-    <span class="border-t lg:border-r border-mono-800"></span>
+    <span class="border-t border-mono-800"></span>
 </ul>

@@ -26,7 +26,7 @@
         <script src="https://cdn.usefathom.com/script.js" data-site="{{ config('services.fathom.site_id') }}" defer></script>
     @endif
 </head>
-<body class="antialiased bg-[#000] text-mono-300 h-full">
+<body class="antialiased bg-mono-white text-mono-800 dark:bg-black dark:text-mono-300 h-full">
     <x-skip-to-content />
     {{ $slot }}
 </body>
