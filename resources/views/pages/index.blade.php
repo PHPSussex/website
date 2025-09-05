@@ -100,7 +100,7 @@
             <div
                 role="note"
                 @class([
-                    'flex items-start gap-2 bg-primary-500/20 p-2 rounded-sm mt-4',
+                    'flex items-start gap-2 bg-primary-500/20 p-2 mt-4',
                     'border-l-4 border-primary-500'
                 ])
             >
