@@ -104,7 +104,7 @@
                     'border-l-4 border-primary-500'
                 ])
             >
-                <x-icon.info class="translate-y-0.5 w-5 h-5 flex-shrink-0 text-primary-500" />
+                <x-icon.info class="w-5 h-5 flex-shrink-0 text-primary-500" />
                 <p class="text-sm text-mono-300">Please note the speaker form link will take you to Google&nbsp;Forms</p>
             </div>
             <a href="https://forms.gle/tHe66kBsgFbnM5ZW7" class="mt-4 text-2xl inline-block link link-focus">Speaker form</a>
