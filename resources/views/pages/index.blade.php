@@ -125,13 +125,11 @@
                     name="Silicon Brighton"
                     provides="Support & AV"
                     url="https://siliconbrighton.com"
-                    logo-class="scale-115 translate-x-[1rem]"
                 />
                 <x-sponsor
                     name="Runway East"
                     provides="Pizza & Venue"
                     url="https://runwayea.st"
-                    logo-class="scale-105 translate-x-[0.4rem]"
                 />
                 <x-sponsor name="Tillo" provides="Drinks" url="https://tillo.com" />
             </div>
