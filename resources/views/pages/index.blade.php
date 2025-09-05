@@ -97,7 +97,7 @@
         <x-layout.grid-divider />
 
         <x-layout.grid-section heading="Speak">
-            <x-type.para>Want to speak at PHP Sussex? Amazing!  We'd love to hear from you.
+            <x-type.para variant="dim">Want to speak at PHP Sussex? Amazing!  We'd love to hear from you.
             Complete the form below and we'll get back to you.</x-type.para>
             <div
                 role="note"
@@ -121,7 +121,7 @@
         <x-layout.grid-divider />
 
         <x-layout.grid-section heading="Sponsors &amp; Support">
-            <x-type.para class="mb-8">We couldn't do it on our own. Massive thanks to our amazing friends:</x-type.para>
+            <x-type.para variant="dim" class="mb-8">We couldn't do it on our own. Massive thanks to our amazing friends:</x-type.para>
             <div class="flex flex-row flex-wrap gap-10 justify-between">
                 <x-sponsor
                     name="Silicon Brighton"
