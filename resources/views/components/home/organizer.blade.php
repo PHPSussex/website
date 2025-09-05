@@ -6,11 +6,19 @@
      * @var Media $img
      */
 @endphp
-<address {{ $attributes->class('@container flex flex-col items-center gap-3 not-italic') }}>
-    <p class="text-lg text-center">{{ $name }}
-        <x-type variant="primary" class="block @min-[275px]:inline italic text-nowrap">"{{ $pronounced }}"</x-type>
-        <x-type variant="dim" class="block @min-[400px]:inline">[he/him]</x-type>
-    </p>
+<address {{ $attributes->class('flex flex-col items-center gap-3 not-italic') }}>
+    <dl class="@container block w-full text-lg text-center ">
+        <div class="inline-flex flex-col @min-[275px]:flex-row flex-wrap @min-[275px]:gap-2">
+            <dt class="sr-only">Name</dt>
+            <x-type tag="dd">{{ $name }}</x-type>
+            <dt class="sr-only">Pronounced</dt>
+            <x-type tag="dd" variant="primary" class="italic text-nowrap">"{{ $pronounced }}"</x-type>
+        </div>
+        <dt class="sr-only">Pronouns</dt>
+        <x-type tag="dd" variant="dim">
+            <span aria-hidden="true">[</span>he/him<span aria-hidden="true">]</span>
+        </x-type>
+    </dl>
     <div
         @class([
             theme('border'),
