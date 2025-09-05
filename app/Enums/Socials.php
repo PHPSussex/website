@@ -35,4 +35,14 @@ enum Socials: string
             self::Slack => 'https://join.slack.com/t/silicon-brighton/shared_invite/zt-1nv1jph77-lN8LOCaxxM80I3Z0NAn9FQ',
         };
     }
+
+    function fathomEvent(string $event): string
+    {
+        return Str::of($this->value)
+            ->headline()
+            ->lower()
+            ->prepend('social ')
+            ->append(" $event")
+            ->value();
+    }
 }

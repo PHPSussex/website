@@ -7,6 +7,7 @@
         ])>
             <a
                 href="{{ $social->url() }}"
+                data-event="{{ $social->fathomEvent('click') }}"
                 @class([
                     'group flex items-center justify-center',
                     'p-2 py-4 md:py-6 lg:py-8 bg-gray-950/0 hover:bg-mono-950',
