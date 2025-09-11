@@ -36,30 +36,11 @@
         <x-layout.grid-divider />
 
         <x-layout.grid-section heading="Next Event">
-            <div class="-rotate-2 inline-block bg-mono-200 dark:bg-mono-300 text-mono-900 px-6 py-3 -mt-1 -ml-8 mb-6 space-y-1">
-                <x-type tag="p" variant="display headline">Encoding Explained &amp; <span class="text-nowrap">Debugging Self-Doubt</span></x-type>
-                <x-type tag="p" variant="upper" class="mb-3 md:font-extrabold !md:text-lg">
-                    <time> Wed 10th September 2025 Doors 6:30pm</time>, Runway East nr. Preston Circus, Brighton
-                </x-type>
-            </div>
-            <x-type.para variant="dim">A big juicy IRL talk + lightning talk combo not to be missed. Featuring Laravel scene regular Dan Johnson of TRYBE and Adria Figueres Garcia of Hove-based startup and PHP Sussex sponsor, Tillo.</x-type.para>
-            <x-type.para variant="dim">Afterwards we'll head to <a class="link link-focus" href="https://www.unbarredbrewery.com/pages/taproom">UnBarred taproom</a>, 2 minutes from our venue, for good vibes and a craft beer / soft-drink or two to wrap the night up.</x-type.para>
-            <a
-                data-event="meetup event click"
-                href="https://www.meetup.com/php-sussex/events/308915820/"
-                @class([
-                    'text-center',
-                    'mt-4 text-xl block sm:inline-block text-white dark:text-black bg-primary-600 hover:bg-primary-500 dark:bg-primary-500 dark:hover:bg-primary-400',
-                    'text-mono-900 pl-6 pr-8 py-2 rounded-sm focus-visible:bg-accent-500',
-                    'focus-visible:outline-none',
-                    'active:scale-95 whitespace-nowrap',
-                ])
-            >
-                <x-icon.meetup class="-translate-x-1 w-8 h-8 inline-block" />
-                <span class="inline-block translate-y-[1px]">
-                    Sign up <span class="hidden sm:inline">on Meetup</span>
-                </span>
-            </a>
+            <x-type.para variant="dim">Remember, remember PHP Sussex in November&hellip; or something like that.</x-type.para>
+            <x-type.para variant="dim">
+                Our next event will be in November 2025, join us on Meetup to get notified when we post the full details.
+            </x-type.para>
+            <x-meetup-link />
         </x-layout.grid-section>
 
         <x-layout.grid-divider />
