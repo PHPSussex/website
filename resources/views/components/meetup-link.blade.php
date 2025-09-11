@@ -2,9 +2,8 @@
 @use(Illuminate\Support\Str)
 @use(Illuminate\Support\Stringable)
 @php
-$href = Str::of('https://www.meetup.com/php-sussex/')->when($eventId, function (Stringable $s) use ($eventId) {
-    $s->append("events/$eventId/");
-});
+$href = Str::of('https://www.meetup.com/php-sussex/')
+    ->when($eventId, fn (Stringable $s) => $s->append("events/$eventId/"));
 @endphp
 <a
     data-event="meetup event click"
@@ -18,5 +17,6 @@ $href = Str::of('https://www.meetup.com/php-sussex/')->when($eventId, function (
     ])
 >
     <x-icon.meetup class="-translate-x-1 w-8 h-8 inline-block" />
-    <span class="inline-block translate-y-[1px]">Sign up <span class="hidden sm:inline">on Meetup</span></span>
+    <span class="inline-block translate-y-[1px]">
+        {{ $eventId ? 'Sign up' : 'Join us' }} <span class="hidden sm:inline">on Meetup</span></span>
 </a>
