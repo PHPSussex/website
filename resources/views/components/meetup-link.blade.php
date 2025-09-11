@@ -6,7 +6,7 @@ $href = Str::of('https://www.meetup.com/php-sussex/')
     ->when($eventId, fn (Stringable $s) => $s->append("events/$eventId/"));
 @endphp
 <a
-    data-event="meetup event click"
+    data-event="meetup {{ $eventId ? 'event' : 'group' }} click"
     href="{{ $href }}"
     @class([
         'text-center',
