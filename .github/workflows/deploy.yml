@@ -22,41 +22,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.4'
-          extensions: mbstring, xml, ctype, iconv, intl, pdo_sqlite, dom, filter, gd, iconv, json, mbstring, pdo
+      - name: Setup Laravel Environment
+        uses: ./.github/actions/setup-laravel
+        env:
+          FATHOM_SITE: ${{ secrets.FATHOM_SITE }}
 
-      - name: Install PHP Dependencies
-        run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
-
-      - name: Setup Laravel environment
-        run: |
-          php -r "file_exists('.env') || copy('.env.example', '.env');"
-          echo "FATHOM_SITE=${{ secrets.FATHOM_SITE }}" >> $GITHUB_ENV
-          php artisan key:generate --no-interaction
-          chmod -R 755 storage bootstrap/cache
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'npm'
-
-      - name: Install Node Dependencies
-        run: npm ci
-
-      - name: Build assets
-        run: npm run build
-
-      - name: Create database
-        run: |
-          mkdir -p database
-          touch database/database.sqlite
-
-      - name: Execute migrations and seeders
-        run: php artisan migrate --force --seed
+      - name: Run tests
+        run: composer test
 
       - name: Generate static site
         run: php artisan export
