@@ -4,6 +4,6 @@
         {{ $slot }}
     </x-type>
     <x-type tag="p" variant="upper" class="mb-3 md:font-extrabold !md:text-lg">
-        <time> {{ $when }}</time>, Runway East nr. Preston Circus, Brighton
+        <time>{{ $when }}</time>, Runway East nr. Preston Circus, Brighton
     </x-type>
 </div>

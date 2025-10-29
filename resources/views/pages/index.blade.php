@@ -36,11 +36,18 @@
         <x-layout.grid-divider />
 
         <x-layout.grid-section heading="Next Event">
-            <x-type.para variant="dim">Remember, remember PHP Sussex in November&hellip; or something like that.</x-type.para>
-            <x-type.para variant="dim">
-                Our next event will be in November 2025, join us on Meetup to get notified when we post the full details.
-            </x-type.para>
-            <x-meetup-link />
+            <x-event-banner when="Wednesday, November 12th 2025">
+                <x-type>Escaping the Code Maze</x-type>
+                <x-type.para>
+                    It's the last meet of 2025 😲! Back end developer and PHP Sussex host Yannick Chenot
+                    will be sharing his thoughts on self documenting code through being 'closed by default'
+                    when following SOLID programming principles. Check out the full deets on Meetup!
+                </x-type.para>
+                <x-type.para>
+                    Join us for a fun evening of talks, drinks and pizza. Joooin uuuuus 🧟.
+                </x-type.para>
+            </x-event-banner>
+            <x-meetup-link event-id="311570637" />
         </x-layout.grid-section>
 
         <x-layout.grid-divider />
@@ -111,10 +118,10 @@
                 />
                 <x-sponsor
                     name="Runway East"
-                    provides="Pizza & Venue"
+                    provides="Venue"
                     url="https://runwayea.st"
                 />
-                <x-sponsor name="Tillo" provides="Drinks" url="https://tillo.com" />
+                <x-sponsor name="Tillo" provides="Pizza & Drinks" url="https://tillo.com" />
             </div>
         </x-layout.grid-section>
 
