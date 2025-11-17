@@ -36,18 +36,8 @@
         <x-layout.grid-divider />
 
         <x-layout.grid-section heading="Next Event">
-            <x-event-banner when="Wednesday, November 12th 2025">
-                <x-type>Escaping the Code Maze</x-type>
-                <x-type.para>
-                    It's the last meet of 2025 😲! Back end developer and PHP Sussex host Yannick Chenot
-                    will be sharing his thoughts on self documenting code through being 'closed by default'
-                    when following SOLID programming principles. Check out the full deets on Meetup!
-                </x-type.para>
-                <x-type.para>
-                    Join us for a fun evening of talks, drinks and pizza. Joooin uuuuus 🧟.
-                </x-type.para>
-            </x-event-banner>
-            <x-meetup-link event-id="311570637" />
+            That's all for 2025 &ndash; wishing everyone a splendid festive period!
+            <x-meetup-link />
         </x-layout.grid-section>
 
         <x-layout.grid-divider />
