@@ -36,7 +36,7 @@
         <x-layout.grid-divider />
 
         <x-layout.grid-section heading="Next Event">
-            <p>That's all for 2025 &ndash; wishing everyone a splendid festive period!</p>
+            <x-type.para>That's all for 2025 &ndash; wishing everyone a splendid festive period!</x-type.para>
             <x-meetup-link />
         </x-layout.grid-section>
 
