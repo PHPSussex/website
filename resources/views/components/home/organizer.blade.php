@@ -23,11 +23,10 @@
         @class([
             theme('border'),
             'w-36 h-36 rounded-full border overflow-hidden relative',
-            'bg-gradient-to-br from-white to-primary-100 dark:from-primary-200 dark:to-primary-700',
+            'bg-primary-200 dark:bg-primary-300',
         ])
     >
-        {{ $img()->attributes(['alt' => "Portrait of $name", 'class' => 'grayscale object-cover w-full h-full']) }}
-        <div class="absolute inset-0 bg-gradient-to-br from-primary-200 to-primary-700 mix-blend-multiply"></div>
+        {{ $img()->attributes(['alt' => "Portrait of $name", 'class' => 'grayscale object-cover w-full h-full mix-blend-multiply']) }}
     </div>
     <a class="link link-focus text-lg" href="{{ $linkedin }}">LinkedIn</a>
 </address>
