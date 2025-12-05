@@ -35,8 +35,8 @@ function theme(string ...$keys): string
 
     foreach ($keys as $key) {
         $classes[] = match ($key) {
-            'border' => 'border-gray-200 dark:border-gray-800',
-            'divide' => 'divide-gray-200 dark:divide-gray-800',
+            'border' => 'border-primary-600/20 dark:border-gray-800',
+            'divide' => 'divide-primary-600/20 dark:divide-gray-800',
             default => '',
         };
     }
