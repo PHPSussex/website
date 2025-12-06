@@ -1,39 +1,20 @@
 @use(function App\setting)
 @use(function App\theme)
-<?php
-    use function Laravel\Folio\name;
-    name('home');
-?>
-@php
-    $home = route('home');
-    $links = [
-        'About' => $home.'#about-us',
-        'Events' => $home.'#next-event',
-        'Socials' => $home.'#socials',
-    ];
-@endphp
-
 <x-layout.html>
-    <header @class(['border-b divide-y relative grid grid-cols-12', theme('border', 'divide')])>
-        <div @class([
-            'grid grid-cols-12',
-            'sticky z-10 w-full top-0 bg-mono-950',
-            'pt-3 pb-4',
-        ])>
-            <nav @class(['px-8 flex col-start-3'])>
-                <a href="{{ route('home') }}" class="inline-block mr-10">
-                    <x-logo.php-sussex class="w-16" />
-                </a>
-                <ul class="flex items-center gap-8">
-                    @foreach ($links as $label => $href)
-                        <li>
-                            <x-type tag="a" :href="$href" variant="upper primary">{{ $label }}</x-type>
-                        </li>
-                    @endforeach
-                </ul>
-            </nav>
+    <header @class(['border-b divide-y', theme('border', 'divide')])>
+        <div class="md:hidden">
+            <x-layout.grid-section>
+                <x-logo.php-sussex class="w-18" />
+            </x-layout.grid-section>
         </div>
-        <x-home.hero class="col-span-12" />
+        <x-layout.grid-section :no-padding="true" :collapse="true">
+            <x-slot:pre class="flex flex-col">
+                <div class="grow flex justify-center items-center">
+                    <x-logo.php-sussex class="hidden md:block w-20 2xl:w-24" />
+                </div>
+            </x-slot:pre>
+            <x-home.hero />
+        </x-layout.grid-section>
     </header>
 
     <main id="content" @class(['divide-y', theme('divide')])>
