@@ -21,18 +21,19 @@
 
     <div {{ $attributes
                 ->class([
+                    'relative',
                     theme('border'),
                     'border-l', $padding => !$noPadding,
                     'col-span-11 md:col-span-10' => $collapse,
                     'col-span-10 md:col-span-8 xl:col-span-7' => !$collapse,
                     'border-r' => !$collapse,
         ]) }}
-
-        @if ($heading)
-            id="{{ Str::of($heading)->replace('&amp;', '')->kebab()->value() }}"
-        @endif
      >
         @if($heading)
+            <div
+                id="{{ Str::of($heading)->replace('&amp;', '')->kebab()->value() }}"
+                class="absolute -top-12"
+            ></div>
             <x-type tag="h2" variant="primary upper" class="mb-3">{!! $heading !!}</x-type>
         @endif
         {{ $slot }}
