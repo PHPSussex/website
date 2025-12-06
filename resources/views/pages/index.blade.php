@@ -21,7 +21,7 @@
             'pt-2 pb-3 sm:pt-3 sm:pb-4',
         ])>
             <nav @class(['px-8 flex col-start-2 md:col-start-3'])>
-                <a href="{{ route('home') }}" class="inline-block mr-6 sm:mr-10 md:mr-12">
+                <a href="{{ route('home', absolute: false) }}" class="inline-block mr-6 sm:mr-10 md:mr-12">
                     <x-logo.php-sussex class="w-10 md:w-12" />
                 </a>
                 <ul class="flex items-center gap-6 md:gap-10">
