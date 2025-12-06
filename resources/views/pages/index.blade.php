@@ -5,7 +5,7 @@
     name('home');
 ?>
 @php
-    $home = route('home');
+    $home = route('home', absolute: false);
     $links = [
         'Events' => $home.'#next-event',
         'Socials' => $home.'#socials',
