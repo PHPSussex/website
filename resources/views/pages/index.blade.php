@@ -18,7 +18,7 @@
             'border-b divide-y relative grid grid-cols-12', theme('border', 'divide'),
             'grid grid-cols-12',
             'sticky z-10 top-0 bg-white dark:bg-black',
-            'pt-2 pb-3 sm:pt-3 sm:pb-4',
+            'py-3 sm:py-4',
         ])>
             <nav @class(['px-8 flex col-start-2 md:col-start-3'])>
                 <a href="{{ route('home', absolute: false) }}" class="inline-block mr-6 sm:mr-10 md:mr-12">

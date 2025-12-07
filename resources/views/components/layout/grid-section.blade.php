@@ -39,6 +39,6 @@
         {{ $slot }}
     </div>
     @if (!$collapse && $post)
-        <div {{ $pre->attributes->class([$postClasses, $padding]) }}>{{ $pre }}</div>
+        <div {{ $pre->attributes->class([$postClasses]) }}>{{ $pre }}</div>
     @endif
 </{{ $tag }}>
