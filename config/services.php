@@ -39,4 +39,7 @@ return [
         'site_id' => env('FATHOM_SITE'),
     ],
 
+    'youtube' => [
+        'api_key' => env('YOUTUBE_API_KEY'),
+    ],
 ];
