@@ -59,7 +59,10 @@
             <x-layout.grid-divider />
 
             <x-layout.grid-section heading="Next Event">
-                <x-type.para>That's all for 2025 &ndash; wishing everyone a splendid festive period!</x-type.para>
+                <x-type.para>
+                    Happy New Year 🎉🎊! We're planning the first meetup in 2026 for February.
+                    Join our Meetup group for announcements.
+                </x-type.para>
                 <x-meetup-link />
             </x-layout.grid-section>
 
