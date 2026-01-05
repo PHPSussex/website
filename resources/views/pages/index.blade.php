@@ -60,7 +60,7 @@
 
             <x-layout.grid-section heading="Next Event">
                 <x-type.para>
-                    Happy New Year 🎉🎊! We're planning the first meetup in 2026 for February.
+                    Happy New Year! We're planning the first meetup in 2026 for February.
                     Join our Meetup group for announcements.
                 </x-type.para>
                 <x-meetup-link />
