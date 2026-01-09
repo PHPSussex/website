@@ -1,0 +1,16 @@
+@import '../../node_modules/reveal.js/dist/reveal.css';
+@import '../../node_modules/reveal.js/dist/theme/night.css';
+@import '../../node_modules/highlight.js/styles/base16/dracula.css';
+
+.reveal {
+    --r-link-color: var(--color-primary-500);
+    --r-heading-font: var(--font-sans);
+    --r-main-font: var(--font-sans);
+}
+
+.reveal pre .hljs {
+    line-height: 1.6;
+    padding: 1rem 1.2rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}

@@ -1,3 +1,4 @@
+@props(['title' => null])
 @use(Illuminate\Support\Facades\Vite)
 @use(function App\theme)
 <!DOCTYPE html>
@@ -6,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>PHP Sussex</title>
+    <title>{{ $title ? "$title | PHPSussex" : 'PHPSussex' }}</title>
 
     @php
         $description = 'PHP Sussex is a free, open to all, monthly meetup based in Brighton, UK.';
@@ -21,11 +22,7 @@
     <meta name="twitter:title" content="{{ $description }}">
     <meta name="twitter:image" content="{{ $banner }}">
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-
-    @if(config('services.fathom.site_id'))
-        <script src="https://cdn.usefathom.com/script.js" data-site="{{ config('services.fathom.site_id') }}" defer></script>
-    @endif
+    {{ $head ?? '' }}
 </head>
 <body
     @class([
@@ -34,7 +31,6 @@
         theme('border'),
     ])
 >
-    <x-skip-to-content />
     {{ $slot }}
 </body>
 </html>
