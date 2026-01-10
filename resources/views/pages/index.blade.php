@@ -126,7 +126,7 @@
 
             <x-layout.grid-section heading="Sponsors &amp; Support">
                 <x-type.para variant="dim" class="mb-8">We couldn't do it on our own. Massive thanks to our amazing friends:</x-type.para>
-                <div class="flex flex-row flex-wrap gap-10 justify-between">
+                <div class="flex flex-row flex-wrap gap-16">
                     <x-sponsor
                         name="Silicon Brighton"
                         provides="Support & AV"
@@ -137,7 +137,6 @@
                         provides="Venue"
                         url="https://runwayea.st"
                     />
-                    <x-sponsor name="Tillo" provides="Pizza & Drinks" url="https://tillo.com" />
                 </div>
             </x-layout.grid-section>
 
