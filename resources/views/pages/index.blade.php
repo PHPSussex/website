@@ -22,7 +22,8 @@
     <x-skip-to-content />
     <div>
         <header @class([
-            'border-b divide-y relative grid grid-cols-12', theme('border', 'divide'),
+            'border-b divide-y relative grid grid-cols-12',
+            theme('border', 'divide'),
             'grid grid-cols-12',
             'sticky z-10 top-0 bg-white dark:bg-black',
             'py-3 sm:py-4',

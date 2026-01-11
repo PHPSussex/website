@@ -1,0 +1,3 @@
+[submodule "resources/views/pages/slides"]
+	path = resources/views/pages/slides
+	url = git@github.com:jobyh/slides.git

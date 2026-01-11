@@ -9,6 +9,7 @@ export default defineConfig({
                 'resources/css/app.css',
                 'resources/css/slides.css',
                 'resources/js/app.js',
+                'resources/js/slides.js',
             ],
             refresh: true,
         }),
