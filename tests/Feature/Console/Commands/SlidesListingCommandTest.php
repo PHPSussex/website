@@ -2,8 +2,8 @@
 
 namespace Tests\Feature\Console\Commands;
 
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
 class SlidesListingCommandTest extends TestCase
@@ -14,71 +14,68 @@ class SlidesListingCommandTest extends TestCase
     {
         parent::setUp();
 
+        Storage::fake('local');
         $this->outputPath = Storage::disk('local')->path('slides-listing.html');
 
-        if (File::exists($this->outputPath)) {
-            File::delete($this->outputPath);
-        }
+        $this->app->when(\App\Console\Commands\SlidesListingCommand::class)
+            ->needs(\Illuminate\Contracts\Filesystem\Filesystem::class)
+            ->give(fn () => Storage::disk('local'));
     }
 
-    protected function tearDown(): void
-    {
-        if (File::exists($this->outputPath)) {
-            File::delete($this->outputPath);
-        }
-
-        parent::tearDown();
-    }
-
-    public function test_it_generates_slides_listing_html_file(): void
+    #[Test]
+    public function it_generates_slides_listing_html_file(): void
     {
         $this->artisan('app:slides-listing')
             ->expectsOutput('Slides listing generated successfully at: '.$this->outputPath)
-            ->assertExitCode(0);
+            ->assertSuccessful();
 
         $this->assertFileExists($this->outputPath);
     }
 
-    public function test_it_fails_if_file_already_exists(): void
+    #[Test]
+    public function it_fails_if_file_already_exists(): void
     {
-        File::put($this->outputPath, 'existing content');
+        Storage::disk('local')->put('slides-listing.html', 'existing content');
 
         $this->artisan('app:slides-listing')
             ->expectsOutput('Slides listing file already exists. Use --force to overwrite.')
-            ->assertExitCode(1);
+            ->assertFailed();
     }
 
-    public function test_it_overwrites_file_with_force_option(): void
+    #[Test]
+    public function it_overwrites_file_with_force_option(): void
     {
-        File::put($this->outputPath, 'existing content');
+        Storage::disk('local')->put('slides-listing.html', 'existing content');
 
         $this->artisan('app:slides-listing', ['--force' => true])
             ->expectsOutput('Slides listing generated successfully at: '.$this->outputPath)
-            ->assertExitCode(0);
+            ->assertSuccessful();
 
-        $content = File::get($this->outputPath);
+        $content = Storage::disk('local')->get('slides-listing.html');
 
         $this->assertStringContainsString('<!DOCTYPE html>', $content);
         $this->assertStringNotContainsString('existing content', $content);
     }
 
-    public function test_it_contains_links_to_all_slide_routes(): void
+    #[Test]
+    public function it_contains_links_to_all_slide_routes(): void
     {
         $this->artisan('app:slides-listing')
-            ->assertExitCode(0);
+            ->assertSuccessful();
 
-        $content = File::get($this->outputPath);
+        $content = Storage::disk('local')->get('slides-listing.html');
 
         $this->assertStringContainsString('<a href="/slides/example">Example</a>', $content);
         $this->assertStringContainsString('<a href="/slides/2026-02">2026 02</a>', $content);
     }
 
-    public function test_it_generates_valid_html_structure(): void
+    #[Test]
+    public function it_generates_valid_html_structure(): void
     {
         $this->artisan('app:slides-listing')
-            ->assertExitCode(0);
+            ->assertSuccessful();
 
-        $content = File::get($this->outputPath);
+        $content = Storage::disk('local')->get('slides-listing.html');
 
         $this->assertStringContainsString('<!DOCTYPE html>', $content);
         $this->assertStringContainsString('<html lang="en">', $content);
@@ -89,19 +86,21 @@ class SlidesListingCommandTest extends TestCase
         $this->assertStringContainsString('</html>', $content);
     }
 
-    public function test_it_displays_count_of_slideshows_found(): void
+    #[Test]
+    public function it_displays_count_of_slideshows_found(): void
     {
         $this->artisan('app:slides-listing')
             ->expectsOutputToContain('Found 2 slideshow(s).')
-            ->assertExitCode(0);
+            ->assertSuccessful();
     }
 
-    public function test_it_sorts_slides_alphabetically(): void
+    #[Test]
+    public function it_sorts_slides_alphabetically(): void
     {
         $this->artisan('app:slides-listing')
-            ->assertExitCode(0);
+            ->assertSuccessful();
 
-        $content = File::get($this->outputPath);
+        $content = Storage::disk('local')->get('slides-listing.html');
 
         $examplePos = strpos($content, 'href="/slides/2026-02"');
         $feb2026Pos = strpos($content, 'href="/slides/example"');
@@ -109,12 +108,13 @@ class SlidesListingCommandTest extends TestCase
         $this->assertTrue($examplePos < $feb2026Pos, 'Slides should be sorted alphabetically');
     }
 
-    public function test_it_escapes_html_in_output(): void
+    #[Test]
+    public function it_escapes_html_in_output(): void
     {
         $this->artisan('app:slides-listing')
-            ->assertExitCode(0);
+            ->assertSuccessful();
 
-        $content = File::get($this->outputPath);
+        $content = Storage::disk('local')->get('slides-listing.html');
 
         $this->assertStringContainsString('href=', $content);
         $this->assertStringNotContainsString('<script>', strtolower($content));

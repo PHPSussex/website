@@ -3,9 +3,9 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\File;
+use Illuminate\Contracts\Filesystem\Filesystem;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class SlidesListingCommand extends Command
@@ -27,11 +27,11 @@ class SlidesListingCommand extends Command
     /**
      * Execute the console command.
      */
-    public function handle(): int
+    public function handle(Filesystem $disk): int
     {
-        $output = Storage::disk('local')->path('slides-listing.html');
+        $name = 'slides-listing.html';
 
-        if (File::exists($output) && ! $this->option('force')) {
+        if ($disk->exists($name) && ! $this->option('force')) {
             $this->error('Slides listing file already exists. Use --force to overwrite.');
 
             return self::FAILURE;
@@ -47,9 +47,9 @@ class SlidesListingCommand extends Command
 
         $slides = $this->slides($routes);
 
-        File::put($output, $this->generateHtml($slides));
+        $disk->put($name, $this->generateHtml($slides));
 
-        $this->info('Slides listing generated successfully at: '.$output);
+        $this->info('Slides listing generated successfully at: '.$disk->path($name));
         $this->info('Found '.count($slides).' slideshow(s).');
 
         return self::SUCCESS;
@@ -60,7 +60,7 @@ class SlidesListingCommand extends Command
      */
     protected function getSlideRoutes(): \Illuminate\Support\Collection
     {
-        return collect(Route::getRoutes())
+        return Collection::make(Route::getRoutes())
             ->filter(fn ($route) => Str::startsWith($route->uri(), 'slides/'))
             ->filter(fn ($route) => in_array('GET', $route->methods()))
             ->values();
