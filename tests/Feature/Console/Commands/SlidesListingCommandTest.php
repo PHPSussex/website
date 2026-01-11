@@ -62,7 +62,7 @@ class SlidesListingCommandTest extends TestCase
         $this->assertStringNotContainsString('existing content', $content);
     }
 
-    public function test_it_contains_links_to_all_slide_files(): void
+    public function test_it_contains_links_to_all_slide_routes(): void
     {
         $this->artisan('app:slides-listing')
             ->assertExitCode(0);

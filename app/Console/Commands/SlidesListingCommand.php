@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -36,30 +37,22 @@ class SlidesListingCommand extends Command
             return self::FAILURE;
         }
 
-        $slidesPath = resource_path('views/pages/slides');
+        $slideRoutes = $this->getSlideRoutes();
 
-        if (! File::isDirectory($slidesPath)) {
-            $this->error('Slides directory not found: '.$slidesPath);
-
-            return self::FAILURE;
-        }
-
-        $slideFiles = File::glob($slidesPath.'/*.blade.php');
-
-        if (empty($slideFiles)) {
-            $this->error('No slide files found in: '.$slidesPath);
+        if ($slideRoutes->isEmpty()) {
+            $this->error('No slide routes found.');
 
             return self::FAILURE;
         }
 
-        $slides = collect($slideFiles)
-            ->map(function ($file) {
-                $filename = basename($file, '.blade.php');
-                $route = '/slides/'.$filename;
+        $slides = $slideRoutes
+            ->map(function ($route) {
+                $uri = $route['uri'];
+                $filename = Str::after($uri, 'slides/');
                 $title = Str::title(str_replace(['-', '_'], ' ', $filename));
 
                 return [
-                    'route' => $route,
+                    'route' => '/'.$uri,
                     'title' => $title,
                     'filename' => $filename,
                 ];
@@ -75,6 +68,21 @@ class SlidesListingCommand extends Command
         $this->info('Found '.count($slides).' slideshow(s).');
 
         return self::SUCCESS;
+    }
+
+    /**
+     * Get all registered slide routes.
+     */
+    protected function getSlideRoutes(): \Illuminate\Support\Collection
+    {
+        Artisan::call('route:list', ['--json' => true]);
+        $output = Artisan::output();
+        $routes = json_decode($output, true);
+
+        return collect($routes)
+            ->filter(fn ($route) => Str::startsWith($route['uri'], 'slides/'))
+            ->filter(fn ($route) => Str::contains($route['method'], 'GET'))
+            ->values();
     }
 
     /**
