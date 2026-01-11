@@ -25,5 +25,11 @@ class FolioServiceProvider extends ServiceProvider
                 //
             ],
         ]);
+
+        // Configure slides with optional URL prefix
+        $prefix = config('slides.prefix', '');
+        $uri = $prefix ? '/'.trim($prefix, '/').'/slides' : '/slides';
+
+        Folio::path(resource_path('views/pages/slides'))->uri($uri);
     }
 }
