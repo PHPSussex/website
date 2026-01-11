@@ -3,8 +3,8 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -29,42 +29,27 @@ class SlidesListingCommand extends Command
      */
     public function handle(): int
     {
-        $outputPath = Storage::disk('local')->path('slides-listing.html');
+        $output = Storage::disk('local')->path('slides-listing.html');
 
-        if (File::exists($outputPath) && ! $this->option('force')) {
+        if (File::exists($output) && ! $this->option('force')) {
             $this->error('Slides listing file already exists. Use --force to overwrite.');
 
             return self::FAILURE;
         }
 
-        $slideRoutes = $this->getSlideRoutes();
+        $routes = $this->getSlideRoutes();
 
-        if ($slideRoutes->isEmpty()) {
+        if ($routes->isEmpty()) {
             $this->error('No slide routes found.');
 
             return self::FAILURE;
         }
 
-        $slides = $slideRoutes
-            ->map(function ($route) {
-                $uri = $route['uri'];
-                $filename = Str::after($uri, 'slides/');
-                $title = Str::title(str_replace(['-', '_'], ' ', $filename));
+        $slides = $this->slides($routes);
 
-                return [
-                    'route' => '/'.$uri,
-                    'title' => $title,
-                    'filename' => $filename,
-                ];
-            })
-            ->sortBy('filename')
-            ->values();
+        File::put($output, $this->generateHtml($slides));
 
-        $html = $this->generateHtml($slides);
-
-        File::put($outputPath, $html);
-
-        $this->info('Slides listing generated successfully at: '.$outputPath);
+        $this->info('Slides listing generated successfully at: '.$output);
         $this->info('Found '.count($slides).' slideshow(s).');
 
         return self::SUCCESS;
@@ -75,13 +60,30 @@ class SlidesListingCommand extends Command
      */
     protected function getSlideRoutes(): \Illuminate\Support\Collection
     {
-        Artisan::call('route:list', ['--json' => true]);
-        $output = Artisan::output();
-        $routes = json_decode($output, true);
+        return collect(Route::getRoutes())
+            ->filter(fn ($route) => Str::startsWith($route->uri(), 'slides/'))
+            ->filter(fn ($route) => in_array('GET', $route->methods()))
+            ->values();
+    }
 
-        return collect($routes)
-            ->filter(fn ($route) => Str::startsWith($route['uri'], 'slides/'))
-            ->filter(fn ($route) => Str::contains($route['method'], 'GET'))
+    /**
+     * Transform routes into slide data.
+     */
+    protected function slides(\Illuminate\Support\Collection $routes): \Illuminate\Support\Collection
+    {
+        return $routes
+            ->map(function ($route) {
+                $uri = $route->uri();
+                $filename = Str::after($uri, 'slides/');
+                $title = Str::title(str_replace(['-', '_'], ' ', $filename));
+
+                return [
+                    'route' => '/'.$uri,
+                    'title' => $title,
+                    'filename' => $filename,
+                ];
+            })
+            ->sortBy('filename')
             ->values();
     }
 
