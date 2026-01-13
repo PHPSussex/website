@@ -36,7 +36,7 @@ enum Socials: string
         };
     }
 
-    function fathomEvent(string $event): string
+    public function fathomEvent(string $event): string
     {
         return Str::of($this->value)
             ->headline()
