@@ -16,10 +16,6 @@ class SlidesListingCommandTest extends TestCase
 
         Storage::fake('local');
         $this->outputPath = Storage::disk('local')->path('slides-listing.html');
-
-        $this->app->when(\App\Console\Commands\SlidesListingCommand::class)
-            ->needs(\Illuminate\Contracts\Filesystem\Filesystem::class)
-            ->give(fn () => Storage::disk('local'));
     }
 
     #[Test]
