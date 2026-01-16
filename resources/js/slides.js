@@ -23,4 +23,6 @@ deck.on('ready', function () {
     }
 })
 
-deck.initialize()
+deck.initialize({
+    controls: false,
+})
