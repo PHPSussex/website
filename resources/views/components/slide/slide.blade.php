@@ -1,1 +1,3 @@
-<section {{ $attributes }}>{{ $slot }}</section>
+<section {{ $attributes->class('slide') }}>
+    {{ $slot }}
+</section>
