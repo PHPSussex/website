@@ -55,11 +55,11 @@
             <x-layout.grid-section>
                 <x-type tag="p" variant="display headline" class="mb-3">PHP Sussex is a free, open to all meetup, based in Brighton UK.</x-type>
                 <div class="space-y-3">
-                    <x-type.para>We're a community of folks who <x-type.emoji text="love" icon="heart" /> working with the web and
+                    <x-type.para variant="dim">We're a community of folks who <x-type.emoji text="love" icon="heart" /> working with the web and
                         getting <x-type.emoji text="sh*t" icon="poo" /> done fast using PHP based applications.
                     </x-type.para>
 
-                    <x-type.para>We meet every couple of months to socialise and share ideas
+                    <x-type.para variant="dim">We meet every couple of months to socialise and share ideas
                     over drinks, pizza and presentations by some awesome speakers from the PHP commmunity.</x-type.para>
                 </div>
             </x-layout.grid-section>
@@ -67,11 +67,19 @@
             <x-layout.grid-divider />
 
             <x-layout.grid-section heading="Next Event">
-                <x-type.para>
-                    Happy New Year! We're planning the first meetup in 2026 for February.
-                    Join our Meetup group for announcements.
+                <x-type.para variant="dim">
+                    On Wednesday 11th February
+                    <a class="link link-focus" href="https://www.linkedin.com/in/daveliddament/">David Liddament</a>
+                    will be joining the PHP Sussex flock
+                    to deliver his sermon <strong>Test Suite Holy Trinity</strong>.
                 </x-type.para>
-                <x-meetup-link />
+
+                <x-type.para variant="dim">
+                    Join us for community, codery, pizza and drinks.
+                    After the talk we'll head to UnBarred Taproom to wind the
+                    evening up Brighton style.
+                </x-type.para>
+                <x-meetup-link :event-id="312915596" />
             </x-layout.grid-section>
 
             <x-layout.grid-divider />
@@ -134,7 +142,7 @@
 
             <x-layout.grid-section heading="Sponsors &amp; Support">
                 <x-type.para variant="dim" class="mb-8">We couldn't do it on our own. Massive thanks to our amazing friends:</x-type.para>
-                <div class="flex flex-row flex-wrap gap-10 justify-between">
+                <div class="flex flex-row flex-wrap gap-16">
                     <x-sponsor
                         name="Silicon Brighton"
                         provides="Support & AV"
@@ -145,7 +153,6 @@
                         provides="Venue"
                         url="https://runwayea.st"
                     />
-                    <x-sponsor name="Tillo" provides="Pizza & Drinks" url="https://tillo.com" />
                 </div>
             </x-layout.grid-section>
 
