@@ -26,6 +26,17 @@ manually it's as simple as:
 php artisan export
 ```
 
+## Slides
+### Setting the Slides Prefix
+By default slides are served from `/slides`. In production it may be
+useful to serve them from a different path if they need to be obfuscated
+until the night of an event, but still accessible from the website by
+presenters.
+
+```env
+SILDES_PREFIX='9a2dac4d-4d77-4618-9dab-cb7ab26d1c01'
+```
+
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

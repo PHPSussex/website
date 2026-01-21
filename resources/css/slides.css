@@ -1,0 +1,48 @@
+@import '../../node_modules/reveal.js/dist/reveal.css';
+@import '../../node_modules/reveal.js/dist/theme/night.css';
+@import '../../node_modules/highlight.js/styles/base16/dracula.css';
+
+html {
+    --color-primary-400: oklch(78.9% 0.154 211.53);
+    --color-primary-500: oklch(71.5% 0.143 215.221);
+
+    --color-mono-400: oklch(70.4% 0.04 256.788);
+
+    --font-sans: 'JetBrains Mono', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+    font-family: var(--font-sans);
+}
+
+.reveal {
+    --r-link-color: var(--color-primary-500);
+    --r-heading-font: var(--font-sans);
+    --r-main-font: var(--font-sans);
+    color: var(--color-mono-400);
+
+    li {
+        list-style: square;
+    }
+
+    li::marker {
+        color: var(--color-primary-500);
+    }
+
+    pre .hljs {
+        line-height: 1.6;
+        padding: 1rem 1.2rem;
+        border-radius: 0.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    h2 + p {
+        color: var(--color-primary-500);
+    }
+
+    .icon {
+        color: var(--color-primary-400);
+    }
+
+}
+
+
+

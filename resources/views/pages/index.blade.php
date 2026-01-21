@@ -13,9 +13,17 @@
 @endphp
 
 <x-layout.html>
+    <x-slot:head>
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @if(config('services.fathom.site_id'))
+            <script src="https://cdn.usefathom.com/script.js" data-site="{{ config('services.fathom.site_id') }}" defer></script>
+        @endif
+    </x-slot:head>
+    <x-skip-to-content />
     <div>
         <header @class([
-            'border-b divide-y relative grid grid-cols-12', theme('border', 'divide'),
+            'border-b divide-y relative grid grid-cols-12',
+            theme('border', 'divide'),
             'grid grid-cols-12',
             'sticky z-10 top-0 bg-white dark:bg-black',
             'py-3 sm:py-4',
