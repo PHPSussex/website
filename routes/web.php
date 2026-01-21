@@ -8,5 +8,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', HomeController::class)->name('home');
 
 Route::prefix('slides/'.trim(Config::get('slides.prefix', ''), '/'))->group(function () {
-    Route::get('/{view}', SlidesController::class);
+    Route::get('/{view}', SlidesController::class)->where('view', '.*');
 });

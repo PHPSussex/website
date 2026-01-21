@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Slides;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Str;
 use Illuminate\View\View;
 
 class SlidesController extends Controller
@@ -12,6 +13,8 @@ class SlidesController extends Controller
      */
     public function __invoke(string $view): View
     {
-        return view("pages.slides.{$view}");
+        return view(
+            Str::of($view)->replace('/', '.')->prepend('pages.slides.')->value(),
+        );
     }
 }
