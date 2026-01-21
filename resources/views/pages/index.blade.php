@@ -60,10 +60,18 @@
 
             <x-layout.grid-section heading="Next Event">
                 <x-type.para>
-                    Happy New Year! We're planning the first meetup in 2026 for February.
-                    Join our Meetup group for announcements.
+                    On Wednesday 11th February
+                    <a class="link link-focus" href="https://www.linkedin.com/in/daveliddament/">David Liddament</a>
+                    will be joining the PHP Sussex flock
+                    to deliver his sermon <strong>Test Suite Holy Trinity</strong>.
                 </x-type.para>
-                <x-meetup-link />
+
+                <x-type.para>
+                    Join us for community, codery, pizza and drinks.
+                    After the talk we'll head to UnBarred Taproom to wind the
+                    evening up.
+                </x-type.para>
+                <x-meetup-link :event-id="312915596" />
             </x-layout.grid-section>
 
             <x-layout.grid-divider />
