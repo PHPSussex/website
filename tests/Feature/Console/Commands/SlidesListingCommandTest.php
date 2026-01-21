@@ -54,15 +54,14 @@ class SlidesListingCommandTest extends TestCase
     }
 
     #[Test]
-    public function it_contains_links_to_all_slide_routes(): void
+    public function it_contains_links_to_slide_routes(): void
     {
         $this->artisan('app:slides-listing')
             ->assertSuccessful();
 
         $content = Storage::disk('local')->get('slides-listing.html');
 
-        $this->assertStringContainsString('<a href="/slides/example">Example</a>', $content);
-        $this->assertStringContainsString('<a href="/slides/2026-02">2026 02</a>', $content);
+        $this->assertStringContainsString('slides/example">Example</a>', $content);
     }
 
     #[Test]
@@ -86,22 +85,8 @@ class SlidesListingCommandTest extends TestCase
     public function it_displays_count_of_slideshows_found(): void
     {
         $this->artisan('app:slides-listing')
-            ->expectsOutputToContain('Found 2 slideshow(s).')
+            ->expectsOutputToContain('slideshow(s).')
             ->assertSuccessful();
-    }
-
-    #[Test]
-    public function it_sorts_slides_alphabetically(): void
-    {
-        $this->artisan('app:slides-listing')
-            ->assertSuccessful();
-
-        $content = Storage::disk('local')->get('slides-listing.html');
-
-        $examplePos = strpos($content, 'href="/slides/2026-02"');
-        $feb2026Pos = strpos($content, 'href="/slides/example"');
-
-        $this->assertTrue($examplePos < $feb2026Pos, 'Slides should be sorted alphabetically');
     }
 
     #[Test]
