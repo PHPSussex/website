@@ -69,7 +69,7 @@
                 <x-type.para>
                     Join us for community, codery, pizza and drinks.
                     After the talk we'll head to UnBarred Taproom to wind the
-                    evening up.
+                    evening up in Brighton style.
                 </x-type.para>
                 <x-meetup-link :event-id="312915596" />
             </x-layout.grid-section>
