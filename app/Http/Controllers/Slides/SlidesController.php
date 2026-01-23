@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Slides;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Str;
 use Illuminate\View\View;
+use InvalidArgumentException;
 
 class SlidesController extends Controller
 {
@@ -13,8 +14,12 @@ class SlidesController extends Controller
      */
     public function __invoke(string $view): View
     {
-        return view(
-            Str::of($view)->replace('/', '.')->prepend('pages.slides.')->value(),
-        );
+        try {
+            return view(
+                Str::of($view)->replace('/', '.')->prepend('pages.slides.')->value(),
+            );
+        } catch (InvalidArgumentException) {
+            abort(404);
+        }
     }
 }
