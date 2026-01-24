@@ -14,9 +14,7 @@ return [
      *
      * For example: "about", "posts/featured"
      */
-    'paths' => [
-        ...array_map('trim', explode(',', env('EXPORT_PATHS', ''))),
-    ],
+    'paths' => [],
 
     /*
      * Files and folders that should be included in the build. Expects
