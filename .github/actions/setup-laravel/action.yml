@@ -19,7 +19,7 @@ runs:
       run: |
         php -r "file_exists('.env') || copy('.env.example', '.env');"
         echo "FATHOM_SITE=${{ env.FATHOM_SITE }}" >> .env
-        echo "OUTPUT_PATHS=${{ env.EXPORT_PATHS }}" >> .env
+        echo "EXPORT_PATHS=${{ env.EXPORT_PATHS }}" >> .env
         php artisan key:generate --no-interaction
         chmod -R 755 storage bootstrap/cache
 
