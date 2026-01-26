@@ -44,17 +44,3 @@ function theme(string ...$keys): string
 
     return implode(' ', $classes);
 }
-
-/**
- * Returns *relative* slides URLs
- */
-function slidesUrl(string $path = ''): string
-{
-    $path = trim($path, '/');
-    $prefix = Config::get('slides.prefix');
-
-    return Str::of('slides')
-        ->when(! empty($prefix), fn ($str) => $str->append('/'.$prefix))
-        ->when(! empty($path), fn ($str) => $str->append('/'.$path))
-        ->value();
-}
