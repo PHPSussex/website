@@ -21,15 +21,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          submodules: true
-          token: ${{ secrets.SLIDES_PAT }}
 
       - name: Setup Laravel Environment
         uses: ./.github/actions/setup-laravel
         env:
           FATHOM_SITE: ${{ secrets.FATHOM_SITE }}
-          SLIDES_PREFIX: ${{ secrets.SLIDES_PREFIX }}
 
       - name: Run tests
         run: composer test
