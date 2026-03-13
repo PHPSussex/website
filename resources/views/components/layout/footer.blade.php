@@ -28,8 +28,7 @@
     </div>
     <div class="flex flex-col gap-6">
         <x-type.para tag="small" variant="dim small">
-            Designed & built by <a href="https://fullstackappco.com/?utm_source=PHP%20Sussex" class="link link-focus">Full Stack App Co.</a>
-            copyright &copy; {{ now()->year }} PHP Sussex unless otherwise noted.
+            Copyright &copy; {{ now()->year }} PHP Sussex unless otherwise noted.
         </x-type.para>
         <x-type.para tag="small" variant="small">
             This site is powered by
