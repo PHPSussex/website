@@ -68,16 +68,16 @@
 
             <x-layout.grid-section heading="Next Event">
                 <x-type.para variant="dim">
-                    On Wednesday 11th February
-                    <a class="link link-focus" href="https://www.linkedin.com/in/daveliddament/">David Liddament</a>
-                    will be joining the PHP Sussex flock
-                    to deliver his sermon <strong>Test Suite Holy Trinity</strong>.
+                    <time>Wednesday 8th April</time> is our next
+                    meetup so bung it in your diary! We've got a
+                    double whammy of exciting speakers and will
+                    be making a full announcement soon!
                 </x-type.para>
 
                 <x-type.para variant="dim">
                     Join us for community, codery, pizza and drinks.
-                    After the talk we'll head to UnBarred Taproom to wind the
-                    evening up Brighton style.
+                    After the talk we'll head to UnBarred Taproom to
+                    wind the evening with some refreshment.
                 </x-type.para>
                 <x-meetup-link :event-id="312915596" />
             </x-layout.grid-section>
