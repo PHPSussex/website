@@ -56,7 +56,7 @@
                 <x-type tag="p" variant="display headline" class="mb-3">PHP Sussex is a free, open to all meetup, based in Brighton UK.</x-type>
                 <div class="space-y-3">
                     <x-type.para variant="dim">We're a community of folks who <x-type.emoji text="love" icon="heart" /> working with the web and
-                        getting <x-type.emoji text="sh*t" icon="poo" /> done fast using PHP based applications.
+                        getting <x-type.emoji text="sh*t" icon="poo" /> done with PHP.
                     </x-type.para>
 
                     <x-type.para variant="dim">We meet every couple of months to socialise and share ideas
@@ -68,10 +68,9 @@
 
             <x-layout.grid-section heading="Next Event">
                 <x-type.para variant="dim">
-                    <time>Wednesday 8th April</time> is our next
-                    meetup so bung it in your diary! We've got a
-                    double whammy of exciting speakers and will
-                    be making a full announcement soon!
+                    What's in your diary on <time>Wednesday 10th June</time>?
+                    Getting down with Christopher Miller and learing about
+                    event sourcing at Peepy Sussers, right? Seriously... 😅
                 </x-type.para>
 
                 <x-type.para variant="dim">
