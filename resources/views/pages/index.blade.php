@@ -67,22 +67,21 @@
             <x-layout.grid-divider />
 
             <x-layout.grid-section heading="Next Event">
-{{--                <x-type.para variant="dim">--}}
-{{--                    What's in your diary on <time>Wednesday 10th June</time>?--}}
-{{--                    Getting down with Christopher Miller and learing about--}}
-{{--                    event sourcing at Peepy Sussers, right? Seriously... 😅--}}
-{{--                </x-type.para>--}}
                 <x-type.para variant="dim">
-                    We'll be meeting in June 2026, stay tuned for more info.
+                    What's in your diary on <time>Wednesday 10th June</time>?
+                    Getting down with Christopher Miller and learing about
+                    event sourcing at Peepy Sussers, right? Seriously people... 😅
                 </x-type.para>
+{{--                <x-type.para variant="dim">--}}
+{{--                    We'll be meeting in June 2026, stay tuned for more info.--}}
+{{--                </x-type.para>--}}
 
                 <x-type.para variant="dim">
                     Join us for community, codery, pizza and drinks.
-                    After the talk we'll head to UnBarred Taproom to
-                    wind the evening with some refreshment.
+                    After the talk we'll head to UnBarred Taproom.
                 </x-type.para>
                 <x-meetup-link
-{{--                    :event-id="312915596"--}}
+                    :event-id="312915596"
                 />
             </x-layout.grid-section>
 
