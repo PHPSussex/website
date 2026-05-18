@@ -70,7 +70,7 @@
                 <x-type.para variant="dim">
                     What's in your diary on <time>Wednesday 10th June</time>?
                     Getting down with Christopher Miller and learing about
-                    event sourcing at Peepy Sussers, right? Seriously people... 😅
+                    event sourcing at Peepy Sussers, right? Seriously people...😅
                 </x-type.para>
 {{--                <x-type.para variant="dim">--}}
 {{--                    We'll be meeting in June 2026, stay tuned for more info.--}}
