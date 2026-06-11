@@ -76,10 +76,10 @@
                     We'll be meeting after the summer 2026 break, stay tuned for more info.
                 </x-type.para>
 
-                <x-type.para variant="dim">
-                    Join us for community, codery, pizza and drinks.
-                    After the talk we'll head to UnBarred Taproom.
-                </x-type.para>
+{{--                <x-type.para variant="dim">--}}
+{{--                    Join us for community, codery, pizza and drinks.--}}
+{{--                    After the talk we'll head to UnBarred Taproom.--}}
+{{--                </x-type.para>--}}
                 <x-meetup-link />
             </x-layout.grid-section>
 
