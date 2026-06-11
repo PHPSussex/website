@@ -80,9 +80,7 @@
                     Join us for community, codery, pizza and drinks.
                     After the talk we'll head to UnBarred Taproom.
                 </x-type.para>
-                <x-meetup-link
-                    :event-id="312915596"
-                />
+                <x-meetup-link />
             </x-layout.grid-section>
 
             <x-layout.grid-divider />
