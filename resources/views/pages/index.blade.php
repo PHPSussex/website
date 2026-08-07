@@ -77,8 +77,8 @@
                     on building a platform for tech communities. 🔥🔥🔥
                 </x-type.para>
                 <x-type.para variant="dim">
-                    Craft pints at Unbarred after. With your crotch-goblins back
-                    at school what excuse could you possibly have?
+                    Craft pints at Unbarred after. What better way to
+                    celebrate the crotch-goblins being back at school?
                 </x-type.para>
                 <x-meetup-link :event-id="315987885" />
             </x-layout.grid-section>
