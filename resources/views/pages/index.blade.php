@@ -67,20 +67,18 @@
             <x-layout.grid-divider />
 
             <x-layout.grid-section heading="Next Event">
-{{--                <x-type.para variant="dim">--}}
-{{--                    What's in your diary on <time>Wednesday 10th June</time>?--}}
-{{--                    Getting down with Christopher Miller and learing about--}}
-{{--                    event sourcing at Peepy Sussers, right? Seriously people...😅--}}
-{{--                </x-type.para>--}}
                 <x-type.para variant="dim">
-                    We'll be meeting after the summer 2026 break, stay tuned for more info.
+                    Like a delicious Twix of tech we have *two in-person talks*
+                    to get your mouth watering on September 9th.
+                    PHPSussex veteran [Rob Allen](https://akrabat.com/) on API security
+                    and PHPSus debutant [Tamas Erdelyi](https://www.linkedin.com/in/terdelyi/)
+                    on building a platform for tech communities. 🔥🔥🔥
                 </x-type.para>
-
-{{--                <x-type.para variant="dim">--}}
-{{--                    Join us for community, codery, pizza and drinks.--}}
-{{--                    After the talk we'll head to UnBarred Taproom.--}}
-{{--                </x-type.para>--}}
-                <x-meetup-link />
+                <x-type.para variant="dim">
+                    Craft pints at Unbarred after. With the crotch-goblins back
+                    at school what excuse could you possibly have?
+                </x-type.para>
+                <x-meetup-link :event-id="315987885" />
             </x-layout.grid-section>
 
             <x-layout.grid-divider />
