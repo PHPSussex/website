@@ -68,10 +68,12 @@
 
             <x-layout.grid-section heading="Next Event">
                 <x-type.para variant="dim">
-                    Like a delicious Twix of tech we have *two in-person talks*
+                    Like a delicious Twix of tech we have two in-person talks
                     to get your mouth watering on September 9th.
-                    PHPSussex veteran [Rob Allen](https://akrabat.com/) on API security
-                    and PHPSus debutant [Tamas Erdelyi](https://www.linkedin.com/in/terdelyi/)
+                </x-type.para>
+                <x-type.para variant="dim">
+                    PHPSussex veteran <a href="https://akrabat.com/">Rob Allen</a> on API security
+                    and PHPSuss debutant <a href="https://www.linkedin.com/in/terdelyi/">Tamas Erdelyi</a>
                     on building a platform for tech communities. 🔥🔥🔥
                 </x-type.para>
                 <x-type.para variant="dim">
