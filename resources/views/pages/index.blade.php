@@ -72,8 +72,8 @@
                     to get your mouth watering.
                 </x-type.para>
                 <x-type.para variant="dim">
-                    PHPSussex veteran <a class="link link-focus" href="https://akrabat.com/">Rob Allen</a> on API security
-                    and PeepySuss debutant <a class="link link-focus" href="https://www.linkedin.com/in/terdelyi/">Tamas Erdelyi</a>
+                    PeepySuss veteran <a class="link link-focus" href="https://akrabat.com/">Rob Allen</a> on API security
+                    and debutant <a class="link link-focus" href="https://www.linkedin.com/in/terdelyi/">Tamas Erdelyi</a>
                     on building a platform for tech communities. 🔥🔥🔥
                 </x-type.para>
                 <x-type.para variant="dim">
