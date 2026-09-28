@@ -10,7 +10,7 @@
     <title>{{ $title ? "$title | PHPSussex" : 'PHPSussex' }}</title>
 
     @php
-        $description = 'PHP Sussex is a free, open to all, monthly meetup based in Brighton, UK.';
+        $description = 'PHP Sussex is a free, open to all, regular meetupj about the PHP coding language based in Brighton, UK.';
         $banner = Vite::asset('resources/images/banner.png');
     @endphp
     <meta name="description" content="{{ $description }}">
