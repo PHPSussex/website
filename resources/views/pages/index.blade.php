@@ -85,7 +85,7 @@
 {{--                    We're meeting again in November 2026. Join our Meetup group--}}
 {{--                    to stay updated!--}}
 {{--                </x-type.para>--}}
-                <x-meetup-link />
+{{--                <x-meetup-link />--}}
             </x-layout.grid-section>
 
             <x-layout.grid-divider />
