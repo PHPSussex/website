@@ -67,24 +67,24 @@
             <x-layout.grid-divider />
 
             <x-layout.grid-section heading="Next Event">
-{{--                <x-type.para variant="dim">--}}
-{{--                    Like a delicious Twix of tech, on September 9th we have two in-person talks--}}
-{{--                    to get your mouth watering.--}}
-{{--                </x-type.para>--}}
-{{--                <x-type.para variant="dim">--}}
-{{--                    PeepySuss veteran <a class="link link-focus" href="https://akrabat.com/">Rob Allen</a> on API security--}}
-{{--                    and debutant <a class="link link-focus" href="https://www.linkedin.com/in/terdelyi/">Tamas Erdelyi</a>--}}
-{{--                    on building a platform for tech communities. 🔥🔥🔥--}}
-{{--                </x-type.para>--}}
-{{--                <x-type.para variant="dim">--}}
-{{--                    Craft pints at Unbarred after. What better way to--}}
-{{--                    celebrate the tin-lids being back at school?--}}
-{{--                </x-type.para>--}}
-{{--                <x-meetup-link :event-id="315987885" />--}}
                 <x-type.para variant="dim">
-                    We're meeting again in November 2026. Join our Meetup group
-                    to stay updated!
+                    We're meeting on Wednesday November 11th for the last
+                    time in the crazy year which has been 2026.
                 </x-type.para>
+                <x-type.para variant="dim">
+                    And what else would we talk about to bookend 2026 but AI?
+                    Returning speaker <a class="link link-focus" href="https://www.linkedin.com/in/jamesshawturner/">James Turner</a>
+                    shares his experiences delivering production code with AI
+                    tools.
+                </x-type.para>
+                <x-type.para variant="dim">
+                    Craft pints or soft drinks at Unbarred after.
+                </x-type.para>
+                <x-meetup-link :event-id="317013388" />
+{{--                <x-type.para variant="dim">--}}
+{{--                    We're meeting again in November 2026. Join our Meetup group--}}
+{{--                    to stay updated!--}}
+{{--                </x-type.para>--}}
                 <x-meetup-link />
             </x-layout.grid-section>
 
