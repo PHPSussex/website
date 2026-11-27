@@ -1,8 +1,3 @@
-import.meta.glob([
-    '../images/**',
-    '../fonts/**',
-    '../views/pages/slides/images/**',
-])
 import './bootstrap'
 
 document.addEventListener('DOMContentLoaded', () => {
