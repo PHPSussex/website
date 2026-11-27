@@ -11,7 +11,7 @@
     "require": {
         "php": "^8.6",
         "ext-dom": "*",
-        "chillerlan/php-qrcode": "^5.0",
+        "chillerlan/php-qrcode": "^6.0",
         "laravel/folio": "^1.1",
         "laravel/framework": "^13.44",
         "laravel/tinker": "^3.0",
