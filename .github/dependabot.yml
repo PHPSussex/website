@@ -9,6 +9,9 @@ updates:
       timezone: "Europe/London"
     cooldown:
       default-days: 3
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
     groups:
       composer-minor-patch:
         update-types: ["minor", "patch"]
@@ -19,6 +22,9 @@ updates:
       interval: "daily"
       time: "21:00"
       timezone: "Europe/London"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
     groups:
       npm-minor-patch:
         update-types: ["minor", "patch"]
@@ -29,6 +35,9 @@ updates:
       interval: "daily"
       time: "21:00"
       timezone: "Europe/London"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
     groups:
       actions-minor-patch:
         update-types: ["minor", "patch"]
