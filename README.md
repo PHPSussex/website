@@ -2,6 +2,9 @@
 This is the website for [PHP Sussex](https://phpsussex.uk). It's built
 using Laravel and deployed to GitHub Pages.
 
+A GitHub action rebuilds nightly, checking for upcoming
+event details on https://meetup.com. 
+
 ## Installation
 After cloning the repository it's the usual Laravel drill:
 
@@ -30,6 +33,14 @@ The deploy workflow runs on every push to `main`, nightly at
 midnight UTC, and can be triggered manually from the Actions tab.
 See the next section on dependency updates, as these ensure GitHub
 does not switch off the scheduled deploy after 60 days. 
+
+## Syncing Next Event
+Next event details are stored in the setting `App\Models\Settings\NextEvent`
+which defaults to a generic message displayed when no upcoming events
+are scheduled. You may run the `app:sync-next-event` command to Retrieve
+details about the next scheduled event. The command uses Laravel Browsershot
+to retrieve client-rendered HTML from Meetup As this isn't visible to
+Laravel's built-in HTTP client, 
 
 ## Dependency Updates
 Dependabot checks Composer, npm and GitHub Actions dependencies
